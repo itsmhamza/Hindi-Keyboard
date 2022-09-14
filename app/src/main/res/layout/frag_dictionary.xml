@@ -133,7 +133,7 @@
                 android:id="@+id/textView4"
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="wrap_content"
-                android:hint="Search word here..."
+                android:hint="Search word here...."
                 android:layout_marginStart="@dimen/_6sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintLeft_toRightOf="@+id/search_icon"
