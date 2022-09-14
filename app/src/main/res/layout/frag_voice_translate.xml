@@ -131,9 +131,10 @@
         </androidx.cardview.widget.CardView>
 
         <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+            android:layout_width="@dimen/_40sdp"
+            android:layout_height="@dimen/_40sdp"
             android:id="@+id/mic"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:layout_gravity="bottom|end"
             android:layout_marginEnd="@dimen/_10sdp"
             android:src="@drawable/ic_icn_mic" />
