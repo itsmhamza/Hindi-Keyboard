@@ -1,0 +1,58 @@
+{
+  "type": "characters",
+  "name": "telugushift",
+  "direction": "ltr",
+  "arrangement": [
+    [
+      { "code":  3077, "label": "అ" },
+      { "code":  3078, "label": "ఆ" },
+      { "code":  3079, "label": "ఇ" },
+      { "code":  3080, "label": "ఈ" },
+      { "code":  3081, "label": "ఉ" },
+      { "code":  3082, "label": "ఊ" },
+      { "code":  3086, "label": "ఎ" },
+      { "code":  3087, "label": "ఏ" },
+      { "code":  3088, "label": "ఐ" },
+      { "code":  3090, "label": "ఒ" }
+
+
+    ],
+    [
+      { "code":  3092, "label": "ఔ" },
+      { "code":  3083, "label": "ఋ" },
+      { "code":  3134, "label": "ా" },
+      { "code":  3135, "label": "ి" },
+      { "code":  3136, "label": "ీ" },
+      { "code":  3137, "label": "ు" },
+      { "code":  3138, "label": "ూ" },
+      { "code":  3139, "label": "ృ" },
+      { "code":  3140, "label": "ౄ" },
+      { "code":  3142, "label": "ె" }
+
+
+    ],
+    [
+      { "code":  3146, "label": "ొ" },
+      { "code":  3147, "label": "ో" },
+      { "code":  3144, "label": "ై" },
+      { "code":  3149, "label": "్" },
+      { "code":  3148, "label": "ౌ" },
+      { "code":  3074, "label": "ం" },
+      { "code":  3075, "label": "ః" },
+      { "code":  3135, "label": "ి" },
+      { "code":  3121, "label": "ఱ" },
+      { "code":  3091, "label": "ఓ" }
+
+
+    ],
+    [
+      { "code":  3176, "label": "౨" },
+      { "code":  3177, "label": "౩" },
+      { "code":   3178, "label": "౪" },
+      { "code":  3179, "label": "౫" },
+      { "code":  3123, "label": "ళ" },
+      { "code":  3175, "label": "౧" },
+      { "code":  3143, "label": "ే" }
+    ]
+  ]
+}

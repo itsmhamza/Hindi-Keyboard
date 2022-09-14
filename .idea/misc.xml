@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/bg_input.xml" value="0.12" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/bg_output.xml" value="0.103" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/bg_searchbar.xml" value="0.1435" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/circleselected.xml" value="0.103" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/ic_icn_copy.xml" value="0.1255" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/input_bg.xml" value="0.103" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/pemissionshape.xml" value="0.1255" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/activity_language_list.xml" value="0.1875" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/activity_main.xml" value="0.19947916666666668" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/activity_translated.xml" value="0.1875" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/frag_sp_translate.xml" value="0.18" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/frag_voice_translate.xml" value="0.19947916666666668" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/item_lang_selection.xml" value="0.16" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/item_sp_translate.xml" value="0.25" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/item_voicetranslation.xml" value="0.1816123188405797" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/lang_selection.xml" value="0.16" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/permiisionlayout.xml" value="0.2" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/toolbar.xml" value="0.18" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/voice_item.xml" value="0.2" />
+        <entry key="..\:/Usama abbasi project/Arabickb/appAosp/src/main/res/layout/ad_layout.xml" value="0.1" />
+        <entry key="..\:/Usama abbasi project/Arabickb/appAosp/src/main/res/layout/key_popup_extended_view.xml" value="0.1" />
+        <entry key="..\:/Usama abbasi project/Arabickb/appAosp/src/main/res/layout/native_banner_ad_layout.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/bg_input.xml" value="0.1515" />
+        <entry key="app/src/main/res/drawable/bg_output.xml" value="0.2" />
+        <entry key="app/src/main/res/drawable/ic_dropdown.xml" value="0.133" />
+        <entry key="app/src/main/res/drawable/tab_color_selector.xml" value="0.2095" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.3071794871794872" />
+        <entry key="app/src/main/res/layout/frag_dictionary.xml" value="0.318974358974359" />
+        <entry key="app/src/main/res/layout/frag_image_editor.xml" value="0.33984375" />
+        <entry key="app/src/main/res/layout/frag_phrase_book.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/frag_sp_translate.xml" value="0.18" />
+        <entry key="app/src/main/res/layout/frag_voice_translate.xml" value="0.3098958333333333" />
+        <entry key="app/src/main/res/layout/item_sp_translate.xml" value="0.25" />
+      </map>
+    </option>
+  </component>
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="11" project-jdk-type="JavaSDK">
+    <output url="file://$PROJECT_DIR$/build/classes" />
+  </component>
+  <component name="ProjectType">
+    <option name="id" value="Android" />
+  </component>
+</project>

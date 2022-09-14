@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dev.patrickgold.florisboard.ime.core.InputWindowView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/florisboard"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_gravity="bottom"
+    android:gravity="bottom"
+    android:layoutDirection="ltr"
+    android:orientation="vertical">
+
+    <dev.patrickgold.florisboard.ime.core.InputView
+        android:id="@+id/inner_input_view_container"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:baselineAligned="false"
+        android:orientation="vertical">
+
+
+        <include
+            layout="@layout/lang_selector_layout"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            />
+        <include
+            layout="@layout/text_translator"
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            >
+
+            <LinearLayout
+                android:id="@+id/one_handed_ctrl_panel_start"
+                style="@style/OneHandedPanel"
+                android:visibility="gone">
+
+                <ImageButton
+                    android:id="@+id/one_handed_ctrl_close_start"
+                    style="@style/OneHandedPanelButton"
+                    android:contentDescription="@string/one_handed__close_btn_content_description"
+                    android:src="@drawable/ic_zoom_out_map" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_handed_button_height"
+                    android:visibility="invisible" />
+
+                <ImageButton
+                    android:id="@+id/one_handed_ctrl_move_start"
+                    style="@style/OneHandedPanelButton"
+                    android:contentDescription="@string/one_handed__move_start_btn_content_description"
+                    android:src="@drawable/ic_keyboard_arrow_left" />
+
+            </LinearLayout>
+
+            <dev.patrickgold.florisboard.ime.core.FlorisViewFlipper
+                android:id="@+id/main_view_flipper"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:measureAllChildren="false"
+                >
+
+
+                <include layout="@layout/text_input_layout" />
+
+                <include layout="@layout/media_input_layout" />
+
+                <include layout="@layout/mic_input_layout" />
+
+            </dev.patrickgold.florisboard.ime.core.FlorisViewFlipper>
+
+            <LinearLayout
+                android:id="@+id/one_handed_ctrl_panel_end"
+                style="@style/OneHandedPanel"
+                android:visibility="gone">
+
+                <ImageButton
+                    android:id="@+id/one_handed_ctrl_close_end"
+                    style="@style/OneHandedPanelButton"
+                    android:contentDescription="@string/one_handed__close_btn_content_description"
+                    android:src="@drawable/ic_zoom_out_map" />
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="@dimen/one_handed_button_height"
+                    android:visibility="invisible" />
+
+                <ImageButton
+                    android:id="@+id/one_handed_ctrl_move_end"
+                    style="@style/OneHandedPanelButton"
+                    android:contentDescription="@string/one_handed__move_end_btn_content_description"
+                    android:src="@drawable/ic_keyboard_arrow_right" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+
+    </dev.patrickgold.florisboard.ime.core.InputView>
+
+</dev.patrickgold.florisboard.ime.core.InputWindowView>

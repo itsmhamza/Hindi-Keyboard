@@ -1,0 +1,224 @@
+<?xml version="1.0" encoding="utf-8"?>
+<dev.patrickgold.florisboard.ime.text.smartbar.SmartbarView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/smartbar"
+    android:layout_width="match_parent"
+    android:layout_height="45dp"
+    android:orientation="vertical"
+   android:gravity="center"
+    android:layoutDirection="locale">
+
+
+
+    <dev.patrickgold.florisboard.ime.core.FlorisViewFlipper
+        android:id="@+id/action_start_area"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constrainedWidth="true"
+        android:visibility="gone"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton
+            android:id="@+id/quick_action_toggle"
+            style="@style/SmartbarQuickAction.Toggle"
+            android:contentDescription="@string/smartbar__quick_action_toggle__alt"
+            android:src="@drawable/ic_keyboard_arrow_right"/>
+
+        <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton
+            android:id="@+id/back_button"
+            style="@style/SmartbarQuickAction"
+            android:contentDescription="@string/smartbar__quick_action__exit_editing"
+            android:src="@drawable/ic_arrow_back"/>
+
+    </dev.patrickgold.florisboard.ime.core.FlorisViewFlipper>
+
+    <dev.patrickgold.florisboard.ime.core.FlorisViewFlipper
+        android:id="@+id/main_area"
+        android:visibility="gone"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintStart_toEndOf="@id/action_start_area"
+        app:layout_constraintEnd_toStartOf="@id/action_end_area"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/suggestionLayout"
+            android:layout_width="match_parent"
+
+            android:layout_height="match_parent">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvSuggestions"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                />
+
+            <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton
+                android:id="@+id/addSuggestionBtn"
+                style="@style/SmartbarQuickAction"
+                android:contentDescription="@string/smartbar__quick_action__open_settings"
+                android:src="@drawable/ic_add"
+                android:visibility="invisible"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+<!--        <LinearLayout-->
+<!--            android:id="@+id/candidates"-->
+<!--            style="@style/SmartbarContainer">-->
+
+<!--            <Button-->
+<!--                android:id="@+id/candidate0"-->
+<!--                style="@style/SmartbarCandidate"-->
+<!--                android:text="suggestions"/>-->
+
+<!--            <View style="@style/SmartbarDivider"/>-->
+
+<!--            <Button-->
+<!--                android:id="@+id/candidate1"-->
+<!--                style="@style/SmartbarCandidate"-->
+<!--                android:text="not yet"/>-->
+
+<!--            <View style="@style/SmartbarDivider"/>-->
+
+<!--            <Button-->
+<!--                android:id="@+id/candidate2"-->
+<!--                style="@style/SmartbarCandidate"-->
+<!--                android:text="implemented"/>-->
+
+<!--        </LinearLayout>-->
+
+        <LinearLayout
+            android:id="@+id/clipboard_suggestion_row"
+            style="@style/SmartbarContainer">
+
+            <Button
+                android:id="@+id/clipboard_suggestion"
+                android:drawableStart="@drawable/ic_content_paste_with_padding"
+                style="@style/SmartbarQuickAction.ClipboardSuggestion"/>
+
+        </LinearLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/quick_actions"
+            style="@style/SmartbarContainer"
+            android:layout_gravity="center_horizontal">
+
+            <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton
+                android:id="@+id/quick_action_switch_to_media_context"
+                style="@style/SmartbarQuickActions"
+                android:contentDescription="@string/smartbar__quick_action__switch_to_media_context"
+                android:src="@drawable/ic_emoji_icon"
+                android:visibility="gone" />
+
+
+            <!-- TODO: find better icon for one-handed mode -->
+            <!--            <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton-->
+            <!--                android:id="@+id/quick_action_one_handed_toggle"-->
+            <!--                style="@style/SmartbarQuickAction"-->
+            <!--                android:visibility="gone"-->
+            <!--                android:contentDescription="@string/smartbar__quick_action__one_handed_mode"-->
+            <!--                android:src="@drawable/ic_smartphone"/>-->
+
+            <!-- TODO: find better icon for editing -->
+            <!--            <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton-->
+            <!--                android:id="@+id/quick_action_switch_to_editing_context"-->
+            <!--                style="@style/SmartbarQuickAction"-->
+            <!--                android:visibility="gone"-->
+            <!--                android:contentDescription="@string/smartbar__quick_action__switch_to_editing_context"-->
+            <!--                android:src="@drawable/ic_format_italic"/>-->
+            <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton
+                android:id="@+id/quick_action_mic"
+                style="@style/SmartbarQuickActions"
+                android:contentDescription="@string/smartbar__mic_context"
+                android:src="@drawable/ic_kb_mic"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/quick_action_theme"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton
+                android:id="@+id/quick_action_theme"
+                style="@style/SmartbarQuickActions"
+                android:contentDescription="@string/smartbar__mic_context"
+                android:src="@drawable/ic_theme"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/quick_action_switch_keyboard"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/quick_action_mic"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <!--            <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton-->
+            <!--                android:id="@+id/quick_action_translation_lang"-->
+            <!--                style="@style/SmartbarQuickAction"-->
+            <!--                android:visibility="gone"-->
+            <!--                android:contentDescription="@string/smartbar__mic_context"-->
+            <!--                android:src="@drawable/ic_language"/>-->
+            <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton
+                android:id="@+id/quick_action_text_translation"
+                style="@style/SmartbarQuickActions"
+                android:contentDescription="@string/smartbar__quick_action__open_settings"
+                android:src="@drawable/ic_translation_btn"
+                android:visibility="gone" />
+
+            <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton
+                android:id="@+id/quick_action_switch_keyboard"
+                style="@style/SmartbarQuickActions"
+                android:contentDescription="@string/smartbar__quick_action__open_settings"
+                android:src="@drawable/ic_keyboard_change"
+                android:visibility="visible"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toEndOf="@+id/quick_action_theme" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <dev.patrickgold.florisboard.ime.text.keyboard.KeyboardView
+            android:id="@+id/clipboard_cursor_row"
+            style="@style/SmartbarContainer"
+            android:layoutDirection="ltr"/>
+
+        <dev.patrickgold.florisboard.ime.text.keyboard.KeyboardView
+            android:id="@+id/number_row"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layoutDirection="ltr"/>
+
+    </dev.patrickgold.florisboard.ime.core.FlorisViewFlipper>
+
+    <dev.patrickgold.florisboard.ime.core.FlorisViewFlipper
+        android:id="@+id/action_end_area"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:visibility="gone"
+        app:layout_constrainedWidth="true"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Placeholder on the right which reserves the space for a second button -->
+        <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton
+            android:id="@+id/placeholder"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/smartbar_button_margin"
+            android:clickable="false"
+
+           />
+
+    </dev.patrickgold.florisboard.ime.core.FlorisViewFlipper>
+
+
+
+</dev.patrickgold.florisboard.ime.text.smartbar.SmartbarView>

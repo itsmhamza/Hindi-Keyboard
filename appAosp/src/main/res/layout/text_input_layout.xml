@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/text_input"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+
+<!--    <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarView-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content">-->
+
+<!--        <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:src="@mipmap/ic_launcher"/>-->
+
+<!--    </dev.patrickgold.florisboard.ime.text.smartbar.SmartbarView>-->
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="@color/shimmerColor"
+        android:layout_marginBottom="1.5dp"
+        />
+
+    <include layout="@layout/smartbar" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1.5dp"
+        android:background="@color/shimmerColor"
+        android:layout_marginTop="1.5dp"
+
+        />
+
+    <!-- KeyboardViews will be inserted in ViewFlipper below dynamically -->
+    <dev.patrickgold.florisboard.ime.core.FlorisViewFlipper
+        android:id="@+id/text_input_view_flipper"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:measureAllChildren="true"
+        android:layout_marginTop="@dimen/_3sdp">
+
+        <LinearLayout
+            android:id="@+id/keyboard_preview"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            tools:ignore="UselessParent">
+
+            <!-- TODO: make a good looking keyboard preview -->
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="Loading keyboard, please wait..."/>
+
+        </LinearLayout>
+
+        <include layout="@layout/editing_layout"/>
+
+    </dev.patrickgold.florisboard.ime.core.FlorisViewFlipper>
+
+</LinearLayout>

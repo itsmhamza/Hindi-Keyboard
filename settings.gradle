@@ -1,0 +1,3 @@
+rootProject.name = "Arabic kb"
+include ':app'
+include ':appAosp'

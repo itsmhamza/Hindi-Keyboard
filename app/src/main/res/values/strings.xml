@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Arabic kb</string>
+    <string name="dumy">text here</string>
+    <string name="voicetransation">Speak and translate</string>
+    <string name="texttranslation">Voice Translate</string>
+    <string name="dictionary">Dictionary</string>
+    <string name="imageeditor">Image Editor</string>
+    <string name="learneng">Learn English</string>
+    <string name="image">image</string>
+    <string name="permissionrequired">Permission Required</string>
+    <string name="permissiontxt">This app needs permission to use Mic Input feature. You can grant them in app settings.</string>
+    <string name="permissiongrant">Allow Permission</string>
+    <string name="Nodatafound">Press mic and Speak</string>
+</resources>

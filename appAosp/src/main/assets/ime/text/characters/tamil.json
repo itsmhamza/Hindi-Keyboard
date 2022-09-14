@@ -1,0 +1,49 @@
+{
+  "type": "characters",
+  "name": "tamil",
+  "direction": "ltr",
+  "arrangement": [
+    [
+      { "code":  2965, "label": "க" },
+      { "code":  2969, "label": "ங" },
+      { "code":  2970, "label": "ச" },
+      { "code":  2974, "label": "ஞ" },
+      { "code":  2975, "label": "ட" },
+      { "code":  2979, "label": "ண" },
+      { "code":  2994, "label": "ல" },
+      { "code":  2997, "label": "வ" },
+      { "code":  2980, "label": "த" },
+      { "code":  2984, "label": "ந" },
+      { "code":  2960, "label": "ஐ" },
+      { "code":  2986, "label": "ப" }
+
+    ],
+    [
+      { "code":  2990, "label": "ம" },
+      { "code":  2991, "label": "ய" },
+      { "code":  2992, "label": "ர" },
+      { "code":  2951, "label": "இ" },
+      { "code":  2952, "label": "ஈ" },
+      { "code":  2953, "label": "உ" },
+      { "code":  2954, "label": "ஊ" },
+      { "code":  2958, "label": "எ" },
+      { "code":  2996, "label": "ழ" },
+      { "code":  3000, "label": "ஸ" },
+      { "code":  2995, "label": "ள" }
+
+
+    ],
+    [
+      { "code":  2993, "label": "ற" },
+      { "code":  2985, "label": "ன" },
+      { "code":  2962, "label": "ஒ" },
+      { "code":  2963, "label": "ஓ" },
+      { "code":  2964, "label": "ஔ" },
+      { "code":  2972, "label": "ஜ" },
+      { "code":  2950, "label": "ஆ" },
+      { "code":  2949, "label": "அ" },
+      { "code":  2999, "label": "ஷ" },
+      { "code":  2959, "label": "ஏ" }
+    ]
+  ]
+}

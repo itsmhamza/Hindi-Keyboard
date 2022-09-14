@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "769645530839",
+    "firebase_url": "https://speak-tamil-translate-english.firebaseio.com",
+    "project_id": "speak-tamil-translate-english",
+    "storage_bucket": "speak-tamil-translate-english.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:769645530839:android:03be60b6657ec10ff16a92",
+        "android_client_info": {
+          "package_name": "speak.translate.tamil.english.voicetyping"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "769645530839-v5ibkv9tkt0aaqhf6ilj1s5jrpq909jr.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvAp23dgLJ6ZJPV2CDfKFx7cFlJutzTtU"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "769645530839-v5ibkv9tkt0aaqhf6ilj1s5jrpq909jr.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

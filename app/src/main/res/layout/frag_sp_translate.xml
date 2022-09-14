@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:background="@color/halfwhite"
+    android:layout_height="match_parent">
+
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <TextView
+        android:id="@+id/emptyview"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/Nodatafound"
+        android:visibility="gone"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_18sdp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayout"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_100sdp"
+        android:background="@color/tab_selected"
+        app:layout_constraintBottom_toBottomOf="parent"
+        tools:layout_editor_absoluteX="-16dp">
+
+        <ImageView
+            android:id="@+id/leftmic"
+            android:contentDescription="@string/image"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginTop="@dimen/_15sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_left_mic"
+            app:layout_constraintEnd_toEndOf="@+id/leftlabel"
+            app:layout_constraintStart_toStartOf="@+id/leftview"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageView
+            android:id="@+id/rightmic"
+            android:contentDescription="@string/image"
+            android:layout_width="@dimen/_35sdp"
+            android:layout_height="@dimen/_35sdp"
+            android:layout_marginEnd="@dimen/_20sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_right_mic"
+            app:layout_constraintBottom_toBottomOf="@+id/leftmic"
+            app:layout_constraintEnd_toEndOf="parent"
+
+            app:layout_constraintTop_toTopOf="@+id/leftmic" />
+
+
+
+
+
+        <ImageView
+            android:id="@+id/ivswitch"
+            android:contentDescription="@string/image"
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:background="?attr/selectableItemBackgroundBorderless"
+            android:src="@drawable/ic_switch"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/leftlabel" />
+
+        <View
+            android:id="@+id/leftview"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/leftmic"
+            android:background="@color/white"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_height="@dimen/_33sdp" />
+
+        <View
+            android:id="@+id/viewline1"
+            android:layout_width="@dimen/_3sdp"
+            android:layout_height="0dp"
+            android:background="@color/tab_selected"
+            app:layout_constraintBottom_toBottomOf="@+id/leftview"
+            app:layout_constraintStart_toEndOf="@+id/leftlabel"
+            app:layout_constraintTop_toTopOf="@+id/leftview" />
+
+        <TextView
+            android:id="@+id/leftlabel"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@color/white"
+            android:maxLines="1"
+            android:maxLength="10"
+            android:padding="@dimen/_5sdp"
+            android:text="TextView"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/viewline1"
+            app:layout_constraintStart_toEndOf="@+id/flagleft"
+            app:layout_constraintTop_toBottomOf="@+id/leftmic" />
+
+        <ImageView
+            android:id="@+id/leftlang"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/image"
+            android:src="@drawable/ic_dropdown"
+            app:layout_constraintBottom_toBottomOf="@+id/leftview"
+
+            app:layout_constraintEnd_toEndOf="@+id/leftview"
+            app:layout_constraintStart_toEndOf="@+id/viewline1"
+            app:layout_constraintTop_toTopOf="@+id/leftview" />
+
+        <ImageView
+            android:id="@+id/flagleft"
+            android:contentDescription="@string/image"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_7sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/leftview"
+            app:layout_constraintStart_toStartOf="@+id/leftview"
+            app:layout_constraintTop_toTopOf="@+id/leftview"
+            app:srcCompat="@drawable/italy" />
+
+        <View
+            android:id="@+id/rightview"
+            android:layout_width="@dimen/_120sdp"
+            android:layout_height="@dimen/_33sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:background="@color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/leftmic" />
+        <View
+            android:id="@+id/viewline2"
+            android:layout_width="@dimen/_3sdp"
+            android:layout_height="0dp"
+            android:background="@color/tab_selected"
+            app:layout_constraintBottom_toBottomOf="@+id/rightview"
+            app:layout_constraintStart_toEndOf="@+id/rightlabel"
+            app:layout_constraintTop_toTopOf="@+id/rightview" />
+        <ImageView
+            android:id="@+id/flagright"
+            android:contentDescription="@string/image"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
+            android:layout_marginStart="@dimen/_7sdp"
+            app:layout_constraintBottom_toBottomOf="@+id/rightview"
+            app:layout_constraintStart_toStartOf="@+id/rightview"
+            app:layout_constraintTop_toTopOf="@+id/rightview"
+            app:srcCompat="@drawable/pakistan" />
+
+        <TextView
+            android:id="@+id/rightlabel"
+            android:layout_width="wrap_content"
+            android:layout_height="@dimen/_25sdp"
+            android:background="@color/white"
+            android:padding="@dimen/_5sdp"
+            android:maxLength="10"
+            android:maxLines="1"
+            android:text="TextView"
+            app:layout_constraintEnd_toStartOf="@+id/viewline2"
+            app:layout_constraintBottom_toBottomOf="@+id/rightview"
+            app:layout_constraintStart_toEndOf="@+id/flagright"
+            app:layout_constraintTop_toTopOf="@+id/rightview" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="@dimen/_50sdp"
+            android:layout_height="wrap_content"
+            android:contentDescription="@string/image"
+            android:src="@drawable/ic_dropdown"
+
+            app:layout_constraintBottom_toBottomOf="@+id/rightview"
+            app:layout_constraintEnd_toEndOf="@+id/rightview"
+            app:layout_constraintStart_toEndOf="@+id/viewline2"
+            app:layout_constraintTop_toTopOf="@+id/rightview" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

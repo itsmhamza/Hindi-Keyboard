@@ -1,0 +1,44 @@
+{
+  "type": "characters",
+  "name": "telugu",
+  "direction": "ltr",
+  "arrangement": [
+    [
+      { "code":  3093, "label": "క" },
+      { "code":  3094, "label": "ఖ" },
+      { "code":  3095, "label": "గ" },
+      { "code":  3096, "label": "ఘ" },
+      { "code":  3097, "label": "ఙ" },
+      { "code":  3098, "label": "చ" },
+      { "code":  3099, "label": "ఛ" },
+      { "code":  3100, "label": "జ" },
+      { "code":  3101, "label": "ఝ" },
+      { "code":  3102, "label": "ఞ" },
+      { "code":  3103, "label": "ట" }
+
+    ],
+    [
+      { "code":  3105, "label": "డ" },
+      { "code":  3106, "label": "ఢ" },
+      { "code":  3107, "label": "ణ" },
+      { "code":  3108, "label": "త" },
+      { "code":  3109, "label": "థ" },
+      { "code":  3110, "label": "ద" },
+      { "code":  3111, "label": "ధ" },
+      { "code":  3112, "label": "న" },
+      { "code":  3114, "label": "ప" },
+      { "code":  3115, "label": "ఫ" },
+      { "code":  3116, "label": "బ" }
+
+    ],
+    [
+      { "code":  3118, "label": "మ" },
+      { "code":  3119, "label": "య" },
+      { "code":   3120, "label": "ర" },
+      { "code":  3122, "label": "ల" },
+      { "code":   3125, "label": "వ" },
+      { "code":  3126, "label": "శ" },
+      { "code":  3127, "label": "ష" }
+    ]
+  ]
+}
