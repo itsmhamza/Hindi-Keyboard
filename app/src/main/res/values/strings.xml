@@ -11,4 +11,5 @@
     <string name="permissiontxt">This app needs permission to use Mic Input feature. You can grant them in app settings.</string>
     <string name="permissiongrant">Allow Permission</string>
     <string name="Nodatafound">Press mic and Speak</string>
+    <string name="keyboard">Keyboard</string>
 </resources>
