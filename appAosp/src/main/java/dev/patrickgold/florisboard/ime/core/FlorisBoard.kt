@@ -37,6 +37,7 @@ import android.widget.FrameLayout
 import android.widget.ImageButton
 import android.widget.Toast
 import androidx.annotation.RequiresApi
+import com.facebook.shimmer.ShimmerFrameLayout
 import com.squareup.moshi.Json
 import dev.patrickgold.florisboard.BuildConfig
 import dev.patrickgold.florisboard.R
@@ -62,7 +63,6 @@ private var florisboardInstance: FlorisBoard? = null
  * managing the one-handed UI.
  */
 class FlorisBoard : InputMethodService(), ClipboardManager.OnPrimaryClipChangedListener {
-
 
     lateinit var prefs: PrefHelper
         private set
