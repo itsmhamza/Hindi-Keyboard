@@ -4,12 +4,15 @@ import android.R.attr.*
 import android.annotation.SuppressLint
 import android.graphics.*
 import android.os.Bundle
-import android.view.MotionEvent
-import android.view.View
-import android.widget.FrameLayout
 import androidx.appcompat.app.AppCompatActivity
+import androidx.core.content.ContextCompat
 import com.spellchecker.arabickb.R
 import com.spellchecker.arabickb.databinding.ActivityImageEditorBinding
+import com.xiaopo.flying.sticker.BitmapStickerIcon
+import com.xiaopo.flying.sticker.Sticker
+import com.xiaopo.flying.sticker.StickerIconEvent
+import com.xiaopo.flying.sticker.TextSticker
+import java.util.*
 
 
 class ImageEditorActivity : AppCompatActivity() {
@@ -26,19 +29,8 @@ class ImageEditorActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         binding.editimage.setImageBitmap(Editimage)
-        binding.addtext.setOnClickListener {
-            binding.addtextt.text.clear()
-            binding.addtextt.visibility = View.VISIBLE
-            binding.addtextt.setFocusableInTouchMode(true);
-            binding.addtextt.setFocusable(true);
-            binding.addtextt.requestFocus();
-        }
-        binding.eraser.setOnClickListener {
-            binding.addtextt.visibility = View.GONE
-        }
-        binding.textcolor.setOnClickListener {
-            binding.addtextt.setTextColor(Color.parseColor("#bdbdbd"));
-        }
+
+
     }
 
 }

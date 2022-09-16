@@ -31,11 +31,12 @@
             android:gravity="center"
             android:text="Camera"
             android:textSize="@dimen/_12sdp" />
+
         <View
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_2sdp"
-            android:layout_marginTop="@dimen/_98sdp"
-            android:background="@color/blue"/>
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_99sdp"
+            android:background="@color/blue" />
     </RelativeLayout>
 
     <RelativeLayout
@@ -63,11 +64,12 @@
             android:gravity="center"
             android:text="Gallery"
             android:textSize="@dimen/_12sdp" />
+
         <View
             android:layout_width="match_parent"
-            android:layout_height="@dimen/_2sdp"
-            android:layout_marginTop="@dimen/_98sdp"
-            android:background="@color/blue"/>
+            android:layout_height="@dimen/_1sdp"
+            android:layout_marginTop="@dimen/_99sdp"
+            android:background="@color/blue" />
 
     </RelativeLayout>
 
