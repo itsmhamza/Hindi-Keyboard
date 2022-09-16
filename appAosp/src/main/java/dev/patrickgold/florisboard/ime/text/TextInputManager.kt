@@ -16,6 +16,7 @@
 
 package dev.patrickgold.florisboard.ime.text
 
+import android.animation.ObjectAnimator
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
@@ -140,14 +141,14 @@ class TextInputManager private constructor(val context: Context) : CoroutineScop
                     activeEditorInstance.commitText(it)
                 }
 //                florisboard.setActiveInput(R.id.text_input)
-                smartbarView?.binding?.quickActionMic?.setImageResource(R.drawable.ic_kb_mic)
+                smartbarView?.binding?.quickActionMic?.setBackgroundResource(R.drawable.oval_red)
 
             }
 
             override fun onEndOfSpeech() {
                 speechRecognition?.stopListen()
 //                florisboard.setActiveInput(R.id.text_input)
-                smartbarView?.binding?.quickActionMic?.setImageResource(R.drawable.ic_kb_mic)
+                smartbarView?.binding?.quickActionMic?.setBackgroundResource(R.drawable.oval_red)
 
                 smartbarView
             }
@@ -155,7 +156,7 @@ class TextInputManager private constructor(val context: Context) : CoroutineScop
             override fun onError(error: Int) {
                 speechRecognition?.stopListen()
 //                florisboard.setActiveInput(R.id.text_input)
-                smartbarView?.binding?.quickActionMic?.setImageResource(R.drawable.ic_kb_mic)
+                smartbarView?.binding?.quickActionMic?.setBackgroundResource(R.drawable.oval_red)
 
             }
         }
@@ -184,6 +185,8 @@ class TextInputManager private constructor(val context: Context) : CoroutineScop
 
         // init speech recognition
         initSpeechRecognition()
+
+
     }
 
     private suspend fun addKeyboardView(mode: KeyboardMode) {
@@ -448,16 +451,68 @@ class TextInputManager private constructor(val context: Context) : CoroutineScop
                 speechRecognition?.listenSpeech {
                     // lambda for handling extra functionality before invoking the listener
 //                    florisboard.setActiveInput(R.id.mic_input)
-                    smartbarView?.binding?.quickActionMic?.setImageResource(R.drawable.ic_kb_mic_listening)
+                    smartbarView?.binding?.quickActionMic?.setBackgroundResource(R.drawable.oval_green)
                 }
 
             }
 
+            R.id.quick_action_settings -> {
+                try {
+                    val intent = Intent(
+                        context,
+                        Class.forName("com.example.speaktranslate.TamilKeyboardActivity")
+                    ).apply {
+                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    }
+                    context.startActivity(intent)
+                } catch (e: ClassNotFoundException) {
+                    e.printStackTrace()
+                }
+            }
             R.id.quick_action_theme -> {
                 try {
                     val intent = Intent(
                         context,
                         Class.forName("com.example.speaktranslate.ThemesActivity")
+                    ).apply {
+                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    }
+                    context.startActivity(intent)
+                } catch (e: ClassNotFoundException) {
+                    e.printStackTrace()
+                }
+            }
+            R.id.quick_action_voice_typing -> {
+                try {
+                    val intent = Intent(
+                        context,
+                        Class.forName("com.example.speaktranslate.VoiceTyping")
+                    ).apply {
+                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    }
+                    context.startActivity(intent)
+                } catch (e: ClassNotFoundException) {
+                    e.printStackTrace()
+                }
+            }
+            R.id.quick_action_voice_translator -> {
+                try {
+                    val intent = Intent(
+                        context,
+                        Class.forName("com.example.speaktranslate.TranslationActivity")
+                    ).apply {
+                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                    }
+                    context.startActivity(intent)
+                } catch (e: ClassNotFoundException) {
+                    e.printStackTrace()
+                }
+            }
+            R.id.quick_action_voice -> {
+                try {
+                    val intent = Intent(
+                        context,
+                        Class.forName("com.example.speaktranslate.MainActivity")
                     ).apply {
                         flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
                     }

@@ -3,8 +3,10 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 apply plugin: 'kotlin-kapt'
 
+
 android {
     compileSdkVersion 30
+
 
     defaultConfig {
 
@@ -33,12 +35,11 @@ android {
         debug {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-
-
         }
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+
 
 
         }
@@ -50,7 +51,6 @@ android {
 }
 
 dependencies {
-    def  kotlin_version  = "1.5.30"
     implementation fileTree(dir: 'libs', include: ['*.jar'])
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
     implementation "org.jetbrains.kotlin:kotlin-reflect:$kotlin_version"
@@ -74,9 +74,14 @@ dependencies {
     implementation 'com.intuit.sdp:sdp-android:1.0.6'
     // room
     def room_version = "2.2.6"
+
     implementation "androidx.room:room-runtime:$room_version"
     implementation "androidx.room:room-ktx:$room_version"
     kapt "androidx.room:room-compiler:$room_version"
+    // shimmer
+    api 'com.facebook.shimmer:shimmer:0.5.0'
+
+
 
 
 }
