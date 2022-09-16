@@ -56,6 +56,8 @@ class MainActivity : AppCompatActivity() {
                     tab.text = resources.getString(R.string.imageeditor)
                 4->
                     tab.text = resources.getString(R.string.learneng)
+                5->
+                    tab.text = resources.getString(R.string.keyboard)
             }
 
         }.attach()
@@ -67,7 +69,7 @@ class MainActivity : AppCompatActivity() {
 
     class FragmentAdapter(activity: AppCompatActivity) : FragmentStateAdapter(activity){
         override fun getItemCount(): Int {
-            return 5
+            return 6
         }
 
         override fun createFragment(position: Int): Fragment {
@@ -76,7 +78,8 @@ class MainActivity : AppCompatActivity() {
                 1 -> VoiceTranslateFragment.newInstance()
                 2 -> DictionaryFragment.newInstance()
                 3 -> ImageEditorFragment.newInstance()
-                else -> PhraseBookFragment.newInstance()
+                4 -> PhraseBookFragment.newInstance()
+                else -> KeyboardFragment.newInstance()
             }
         }
 
