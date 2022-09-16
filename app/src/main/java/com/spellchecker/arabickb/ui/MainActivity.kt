@@ -26,6 +26,7 @@ import com.spellchecker.arabickb.databinding.ActivityMainBinding
 import com.spellchecker.arabickb.databinding.PermiisionlayoutBinding
 import com.spellchecker.arabickb.fragments.*
 
+
 class MainActivity : AppCompatActivity() {
     private lateinit var mainbinding:ActivityMainBinding
     lateinit var navController: NavController
@@ -116,7 +117,9 @@ class MainActivity : AppCompatActivity() {
         intent.data = uri
         startActivityForResult(intent, PERMISSIONREQUEST)
     }
+private fun toobalTitle(){
 
+}
     private fun showPermissionDialog() {
         perdialogscreen = PersmissionDiaog(this,this)
         perdialogscreen?.window?.setBackgroundDrawable(ColorDrawable(Color.TRANSPARENT))
