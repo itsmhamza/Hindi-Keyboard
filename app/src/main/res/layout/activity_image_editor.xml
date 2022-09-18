@@ -110,7 +110,9 @@
             android:id="@+id/addtext"
             android:layout_marginStart="@dimen/_20sdp"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:src="@drawable/icn_my_work" />
+            android:src="@drawable/icn_add_text"
+            android:padding="@dimen/_7sdp"
+            android:background="@drawable/circleselectedimage"/>
 
         <TextView
             android:layout_width="wrap_content"
@@ -128,8 +130,10 @@
             android:layout_gravity="center_vertical|end"
             android:layout_marginEnd="@dimen/_20sdp"
             android:id="@+id/emoji"
+            android:padding="@dimen/_7sdp"
+            android:background="@drawable/circleselectedimage"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:src="@drawable/icn_rate_app" />
+            android:src="@drawable/icn_emoji" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -148,7 +152,9 @@
             android:id="@+id/eraser"
             android:layout_marginEnd="@dimen/_40sdp"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:src="@drawable/icn_share_app" />
+            android:padding="@dimen/_7sdp"
+            android:background="@drawable/circleselectedimage"
+            android:src="@drawable/icn_eraser" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -166,7 +172,9 @@
             android:id="@+id/textcolor"
             android:layout_marginStart="@dimen/_40sdp"
             android:layout_marginBottom="@dimen/_10sdp"
-            android:src="@drawable/icn_share_app" />
+            android:padding="@dimen/_7sdp"
+            android:background="@drawable/circleselectedimage"
+            android:src="@drawable/icn_text_color" />
 
         <TextView
             android:layout_width="wrap_content"

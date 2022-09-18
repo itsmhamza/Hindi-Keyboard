@@ -19,6 +19,7 @@ import com.karumi.dexter.listener.multi.MultiplePermissionsListener
 
 import com.spellchecker.arabickb.databinding.FragImageEditorBinding
 import com.spellchecker.arabickb.ui.ImageEditorActivity
+import com.spellchecker.arabickb.ui.MyWorkActivity
 import java.io.IOException
 
 
@@ -62,6 +63,10 @@ class ImageEditorFragment:Fragment() {
             }catch (e:Exception){
                 Toast.makeText(activity, "Grant Permission first", Toast.LENGTH_SHORT).show()
             }
+        }
+        fragimagebinding.myWork.setOnClickListener {
+            val intent = Intent(activity,MyWorkActivity::class.java)
+            startActivity(intent)
         }
         fragimagebinding.rate.setOnClickListener {
             try{
