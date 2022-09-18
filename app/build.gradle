@@ -37,6 +37,7 @@ android {
 
 dependencies {
     implementation 'androidx.emoji:emoji-bundled:1.1.0'
+    implementation 'androidx.emoji:emoji:1.1.0'
     def nav_version = "2.3.5"
     implementation project(path: ':appAosp')
     api "androidx.navigation:navigation-fragment-ktx:$nav_version"
