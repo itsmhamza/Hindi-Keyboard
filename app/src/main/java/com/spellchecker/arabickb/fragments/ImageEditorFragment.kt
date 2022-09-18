@@ -3,6 +3,7 @@ package com.spellchecker.arabickb.fragments
 import android.Manifest
 import android.content.Intent
 import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
 import android.view.LayoutInflater
@@ -10,6 +11,7 @@ import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import com.karumi.dexter.BuildConfig
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
@@ -61,7 +63,29 @@ class ImageEditorFragment:Fragment() {
                 Toast.makeText(activity, "Grant Permission first", Toast.LENGTH_SHORT).show()
             }
         }
+        fragimagebinding.rate.setOnClickListener {
+            try{
+            val uri = Uri.parse("http://play.google.com/store/apps/details?id=${activity?.packageName}")
+            val intent = Intent(Intent.ACTION_VIEW, uri)
+            startActivity(intent)
+            }catch (e:Exception){
+                ///
+            }
+        }
+        fragimagebinding.share.setOnClickListener {
+            try {
+                val shareIntent = Intent(Intent.ACTION_SEND)
+                shareIntent.type = "text/plain"
+                shareIntent.putExtra(Intent.EXTRA_SUBJECT, "Hindi English Speak Translate")
+                var shareMessage ="https://play.google.com/store/apps/details?id=${activity?.packageName}"
+                shareIntent.putExtra(Intent.EXTRA_TEXT, shareMessage)
+                startActivity(Intent.createChooser(shareIntent, "choose one"))
+            } catch (e: java.lang.Exception) {
+                //e.toString();
+            }
+        }
     }
+    @Deprecated("Deprecated in Java")
     override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) {
         super.onActivityResult(requestCode, resultCode, data)
         when (requestCode) {
