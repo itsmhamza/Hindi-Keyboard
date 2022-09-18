@@ -7,7 +7,6 @@ import android.graphics.*
 import android.os.Bundle
 import android.text.Html
 import android.text.Layout
-import android.view.Gravity
 import android.view.Window
 import android.widget.EditText
 import android.widget.RelativeLayout
@@ -21,14 +20,12 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.spellchecker.arabickb.R
 import com.spellchecker.arabickb.adapters.emojiAdopter
 import com.spellchecker.arabickb.databinding.ActivityImageEditorBinding
-import com.spellchecker.arabickb.utils.EMOJIS
 import com.spellchecker.arabickb.utils.EMOJIS.emojis
 import com.xiaopo.flying.sticker.Sticker
 import com.xiaopo.flying.sticker.TextSticker
 import top.defaults.colorpicker.ColorPickerPopup
 import top.defaults.colorpicker.ColorPickerPopup.ColorPickerObserver
 import java.util.*
-import kotlin.collections.ArrayList
 
 
 class ImageEditorActivity : AppCompatActivity() {
@@ -47,7 +44,6 @@ class ImageEditorActivity : AppCompatActivity() {
         setContentView(binding.root)
         val TextSticker :ArrayList<Sticker> = arrayListOf(TextSticker(this))
         val emojiSticker :ArrayList<Sticker> = arrayListOf(TextSticker(this))
-        var Colorr:Int = Color.BLACK
         emoji.addAll(emojis)
 
         binding.editimage.setImageBitmap(Editimage)
@@ -73,7 +69,7 @@ class ImageEditorActivity : AppCompatActivity() {
             ok.setOnClickListener {
                 if(text.text.isNotEmpty()){
                     val sticker = TextSticker(this)
-                    sticker.setTextColor(Colorr)
+                    sticker.setTextColor(Color.BLACK)
                     sticker.text = "${text.text}"
                     sticker.setTextAlign(Layout.Alignment.ALIGN_CENTER)
                     sticker.resizeText()
@@ -98,7 +94,10 @@ class ImageEditorActivity : AppCompatActivity() {
                 .show(binding.stickerview, object : ColorPickerObserver() {
                     override fun onColorPicked(color: Int)
                     {
-                        Colorr = color
+                        if (binding.stickerview.getCurrentSticker() is TextSticker) {
+                            (binding.stickerview.getCurrentSticker() as TextSticker).setTextColor(color)
+                            binding.stickerview.invalidate()
+                        }
                     }
                     fun onColor(color: Int, fromUser: Boolean) {}
                 })
