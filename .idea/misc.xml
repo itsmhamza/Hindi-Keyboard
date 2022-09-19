@@ -7,6 +7,7 @@
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/bg_output.xml" value="0.103" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/bg_searchbar.xml" value="0.1435" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/circleselected.xml" value="0.103" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/dictionary_corner_layout.xml" value="0.1275" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/ic_icn_copy.xml" value="0.1255" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/input_bg.xml" value="0.103" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/pemissionshape.xml" value="0.1255" />
@@ -14,6 +15,7 @@
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/activity_main.xml" value="0.19947916666666668" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/activity_translated.xml" value="0.1875" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/frag_dictionary.xml" value="0.1921875" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/frag_image_editor.xml" value="0.1921875" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/frag_sp_translate.xml" value="0.18" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/frag_voice_translate.xml" value="0.19947916666666668" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/item_lang_selection.xml" value="0.16" />
@@ -23,6 +25,7 @@
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/permiisionlayout.xml" value="0.2" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/toolbar.xml" value="0.18" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/voice_item.xml" value="0.2" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1275" />
         <entry key="..\:/Usama abbasi project/Arabickb/appAosp/src/main/res/layout/ad_layout.xml" value="0.1" />
         <entry key="..\:/Usama abbasi project/Arabickb/appAosp/src/main/res/layout/key_popup_extended_view.xml" value="0.1" />
         <entry key="..\:/Usama abbasi project/Arabickb/appAosp/src/main/res/layout/native_banner_ad_layout.xml" value="0.1" />
