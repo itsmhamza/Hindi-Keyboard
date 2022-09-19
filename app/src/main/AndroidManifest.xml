@@ -6,6 +6,8 @@
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
 
     <queries>
         <intent>
@@ -14,6 +16,7 @@
     </queries>
 
     <application
+        android:name=".ApplicationClass"
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
         android:fullBackupContent="@xml/backup_rules"
@@ -25,23 +28,40 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".ui.MyWorkActivity"
+            android:exported="false" />
+        <activity
+            android:name=".ui.ImageEditorActivity"
+            android:exported="false" />
+        <activity
             android:name=".ui.TranslatedActivity"
             android:exported="false" />
         <activity
             android:name=".ui.LanguageListActivity"
             android:exported="false" />
         <activity
-            android:name=".ui.SplashActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
+
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name=".ui.MainActivity"
-            android:exported="false">
-        </activity>
+
+        <service
+            android:name="dev.patrickgold.florisboard.ime.core.FlorisBoard"
+            android:label="@string/app_name"
+            android:permission="android.permission.BIND_INPUT_METHOD"
+            tools:ignore="IntentFilterExportedReceiver">
+            <meta-data
+                android:name="android.view.im"
+                android:resource="@xml/method" />
+
+            <intent-filter>
+                <action android:name="android.view.InputMethod" />
+            </intent-filter>
+        </service>
     </application>
 
 </manifest>

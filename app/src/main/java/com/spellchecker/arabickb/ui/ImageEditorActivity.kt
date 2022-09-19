@@ -3,10 +3,14 @@ package com.spellchecker.arabickb.ui
 import android.R.attr.*
 import android.annotation.SuppressLint
 import android.app.Dialog
+import android.content.Context
 import android.graphics.*
+import android.net.Uri
 import android.os.Bundle
+import android.provider.MediaStore
 import android.text.Html
 import android.text.Layout
+import android.util.Log
 import android.view.Window
 import android.widget.EditText
 import android.widget.RelativeLayout
@@ -21,10 +25,14 @@ import com.spellchecker.arabickb.R
 import com.spellchecker.arabickb.adapters.emojiAdopter
 import com.spellchecker.arabickb.databinding.ActivityImageEditorBinding
 import com.spellchecker.arabickb.utils.EMOJIS.emojis
+import com.spellchecker.arabickb.utils.FileExternalPath
+import com.spellchecker.arabickb.utils.FileExternalPath.copyUriToExternalFilesDir
+import com.spellchecker.arabickb.utils.FileExternalPath.getFileNameByUri
 import com.xiaopo.flying.sticker.Sticker
 import com.xiaopo.flying.sticker.TextSticker
 import top.defaults.colorpicker.ColorPickerPopup
 import top.defaults.colorpicker.ColorPickerPopup.ColorPickerObserver
+import java.io.ByteArrayOutputStream
 import java.util.*
 
 
@@ -132,7 +140,25 @@ class ImageEditorActivity : AppCompatActivity() {
             recyclerview.setItemViewCacheSize(20)
             dialog.show()
         }
-    }
+        binding.save.setOnClickListener {
+            binding.stickerview.setDrawingCacheEnabled(true)
+            val bitmap: Bitmap = Bitmap.createBitmap(binding.stickerview.getDrawingCache())
+            val ImageUri = getImageUri(this,bitmap)
+            val imagename = getFileNameByUri(ImageUri!!)
+            copyUriToExternalFilesDir(ImageUri,imagename)
+        }
 
+    }
+    fun getImageUri(inContext: Context, inImage: Bitmap): Uri? {
+        val bytes = ByteArrayOutputStream()
+        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
+        val path: String = MediaStore.Images.Media.insertImage(
+            inContext.getContentResolver(),
+            inImage,
+            "Title",
+            null
+        )
+        return Uri.parse(path)
+    }
 
 }

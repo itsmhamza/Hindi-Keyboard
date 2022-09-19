@@ -48,13 +48,9 @@ class ImageEditorFragment:Fragment() {
         super.onViewCreated(view, savedInstanceState)
         getPermission()
         fragimagebinding.gallery.setOnClickListener {
-            try {
                 val photoPickerIntent = Intent(Intent.ACTION_PICK)
                 photoPickerIntent.type = "image/*"
                 startActivityForResult(photoPickerIntent, GALLERY_REQUEST)
-            }catch (e:Exception){
-                Toast.makeText(activity, "Grant Permission first", Toast.LENGTH_SHORT).show()
-            }
         }
         fragimagebinding.camera.setOnClickListener {
             try {
