@@ -7,6 +7,7 @@
     <string name="imageeditor">Image Editor</string>
     <string name="learneng">Learn English</string>
     <string name="image">image</string>
+    <string name="startlbl">Lets start</string>
     <string name="permissionrequired">Permission Required</string>
     <string name="permissiontxt">This app needs permission to use Mic Input feature. You can grant them in app settings.</string>
     <string name="permissiongrant">Allow Permission</string>
