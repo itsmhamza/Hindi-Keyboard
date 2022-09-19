@@ -1,6 +1,7 @@
 package com.spellchecker.arabickb.ui
 
 import android.os.Bundle
+import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -20,19 +21,24 @@ class LanguageListActivity : AppCompatActivity(), LanguageSelectionAdapter.onIte
         langlistner=this
             uiViewsData()
 
+
+    }
+
+    private fun uiViewsData() {
+        lanlistbinding.rvlang.adapter = lanseleadapter
         lanlistbinding.searchBar.setOnQueryTextListener(object : SearchView.OnQueryTextListener {
             override fun onQueryTextSubmit(query: String?): Boolean {
+                lanseleadapter?.filter?.filter(query)
                 return false
             }
 
             override fun onQueryTextChange(newText: String?): Boolean {
-                lanseleadapter!!.getFilter().filter(newText)
-                return false
+
+                lanseleadapter?.filter?.filter(newText)
+                return true
             }
         })
-    }
 
-    private fun uiViewsData() {
         lanlistbinding.rvlang.apply {
             layoutManager=LinearLayoutManager(this@LanguageListActivity)
             lanseleadapter= LanguageSelectionAdapter(LangSelection.Lang,langlistner!!)
@@ -41,6 +47,6 @@ class LanguageListActivity : AppCompatActivity(), LanguageSelectionAdapter.onIte
     }
 
     override fun onItemClick(Item: Languages) {
-
+Toast.makeText(this@LanguageListActivity,Item.name,Toast.LENGTH_SHORT).show()
     }
 }

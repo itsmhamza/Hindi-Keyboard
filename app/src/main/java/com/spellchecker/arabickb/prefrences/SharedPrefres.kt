@@ -11,7 +11,15 @@ class SharedPrefres( contxt:Context) {
     var inputlangposition="inputlang"
     var outputlangposition="outputlang"
     var lanselection="langslectionpos"
+    var lanname="langslectionposname"
+    var outputlanname="langoutputposname"
 
+    var lannameposition:String
+        get() = prefrences.getString(lanname,"Arabic")!!
+        set(value) = prefrences.edit().putString(lanname, value).apply()
+    var outputlanposition:String
+        get() = prefrences.getString(outputlanname,"English")!!
+        set(value) = prefrences.edit().putString(outputlanname, value).apply()
     var inputlangpos:Int
         get() = prefrences.getInt(inputlangposition, 2)
         set(value) = prefrences.edit().putInt(inputlangposition, value).apply()

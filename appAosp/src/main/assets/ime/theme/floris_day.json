@@ -17,7 +17,7 @@
       "bgColor": "#E0E0E0"
     },
     "key": {
-      "bgColor": "#FFFFFF",
+      "bgColor": "#000000",
       "bgColorPressed": "#F5F5F5",
       "fgColor": "@window/textColor"
     },
