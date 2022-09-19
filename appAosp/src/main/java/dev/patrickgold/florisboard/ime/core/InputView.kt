@@ -24,7 +24,6 @@ import android.util.Log
 import android.view.View
 import android.widget.*
 import androidx.core.view.marginTop
-
 import dev.patrickgold.florisboard.BuildConfig
 import dev.patrickgold.florisboard.R
 import dev.patrickgold.florisboard.ime.language.LangSelectorLayout
@@ -186,7 +185,6 @@ class InputView : LinearLayout {
             baseHeight += texttranslatorLayout.height
             baseHeight -= desiredSmartbarHeight
         }
-
 //        else
 //            baseHeight -= adlayout?.height!!
 

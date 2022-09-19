@@ -18,8 +18,9 @@ class LanguageSelectionAdapter(private val language_list: ArrayList<Languages>, 
 var getUserModelListFiltered:List<String>?=null
 var userModelList:List<Languages>?=null
 
-    private lateinit var mlistener: LanguageSelectionAdapter.onItemClickListener
+    private lateinit var mlistener:onItemClickListener
     var copycountrieslist = ArrayList<Languages>()
+    var countrieslists = ArrayList<Languages>()
     init {
         copycountrieslist = language_list
         mlistener = listener
@@ -39,7 +40,7 @@ var userModelList:List<Languages>?=null
 with(holder){
 
     with(copycountrieslist[position]) {
-     // val currentItem = copycountrieslist[position]
+
        langbinding.ivflag.setImageResource(copycountrieslist[position].image)
       // langbinding.ivflag.setImageResource(copycountrieslist.[position])
        langbinding.langname.text = copycountrieslist[position].name
@@ -47,14 +48,17 @@ with(holder){
 
         langbinding.selectedimg.visibility = View.GONE
             if (prefs!!.lanselectionpos == 1) {
-                if (position==prefs!!.inputlangpos){
+                //if (prefs!!.inputlangpos==getLangPos(copycountrieslist[position])){
+
+                       if(copycountrieslist[position].name.equals(prefs!!.lannameposition)){
                     langbinding.selectedimg.visibility = View.VISIBLE
                 }
 
 
 
-            } else {
-                if (position==prefs!!.outputlangpos){
+            }
+        if (prefs!!.lanselectionpos == 2) {
+                if(copycountrieslist[position].name.equals(prefs!!.outputlanposition)){
                     langbinding.selectedimg.visibility = View.VISIBLE
                 }
 
@@ -62,20 +66,28 @@ with(holder){
 
 
         }
-    }
-    holder.itemView.setOnClickListener {
-        if (prefs!!.lanselectionpos==1){
-            prefs!!.inputlangpos=position
 
-        }
-        else{
-            prefs!!.outputlangpos=position
-        }
-        mlistener.onItemClick(copycountrieslist[position])
-        notifyDataSetChanged()
     }
+
+
+
+
 }
+        holder.itemView.setOnClickListener {
+            if (prefs!!.lanselectionpos==1){
 
+              //  prefs!!.inputlangpos=getLangPos(copycountrieslist[position])
+                prefs!!.lannameposition=copycountrieslist[position].name
+            }
+            else{
+                prefs!!.outputlanposition=copycountrieslist[position].name
+              //  prefs!!.outputlangpos=getLangPos(copycountrieslist[position])
+
+            }
+            //prefs!!.inputlangposition=copycountrieslist[position].name
+            mlistener.onItemClick(copycountrieslist[position])
+            notifyDataSetChanged()
+        }
     }
 
 
@@ -108,6 +120,7 @@ with(holder){
                         }
                     }
                     copycountrieslist = resultList
+
                 }
                 val filterResults = FilterResults()
                 filterResults.values = copycountrieslist
@@ -119,5 +132,7 @@ with(holder){
             }
         }
     }
-
+    private fun getLangPos(lanpos: Languages): Int {
+        return countrieslists.indexOf(lanpos)
+    }
 }

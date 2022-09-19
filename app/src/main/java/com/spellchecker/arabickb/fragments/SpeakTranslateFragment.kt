@@ -15,6 +15,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.spellchecker.arabickb.R
+import com.spellchecker.arabickb.adapters.LanguageSelectionAdapter
 import com.spellchecker.arabickb.adapters.VoiceAdapter
 import com.spellchecker.arabickb.database.*
 import com.spellchecker.arabickb.databinding.FragSpTranslateBinding
@@ -22,6 +23,8 @@ import com.spellchecker.arabickb.prefrences.SharedPrefres
 import com.spellchecker.arabickb.ui.LanguageListActivity
 import com.spellchecker.arabickb.utils.CoroutineRunningTask
 import com.spellchecker.arabickb.utils.LangSelection
+import com.spellchecker.arabickb.utils.LangSelection.Lang
+import com.spellchecker.arabickb.utils.Languages
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -30,7 +33,8 @@ import org.json.JSONArray
 import java.util.*
 
 
-class SpeakTranslateFragment:Fragment(),View.OnClickListener {
+class SpeakTranslateFragment:Fragment(),View.OnClickListener,LanguageSelectionAdapter.onItemClickListener
+     {
     lateinit var fragspbinding:FragSpTranslateBinding
     var adaptervoice: VoiceAdapter?=null
     var inputtype:Int=1
@@ -58,7 +62,7 @@ class SpeakTranslateFragment:Fragment(),View.OnClickListener {
     }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-uiViews()
+        uiViews()
         attachAdapter()
     }
 
@@ -246,11 +250,21 @@ uiViews()
                 fragspbinding.rv.visibility=View.VISIBLE
                 fragspbinding.emptyview.visibility=View.GONE
             }
+
             fragspbinding.rv.apply {
                 layoutManager=LinearLayoutManager(requireActivity())
                 adaptervoice= VoiceAdapter(it,sharedmodel)
                 fragspbinding.rv.adapter=adaptervoice
             }
         })
+
+
     }
-}
+
+         override fun onItemClick(Item: Languages) {
+             fragspbinding.leftlabel.text= Item.name
+             fragspbinding.flagleft.setImageResource(Item.image)
+         }
+
+
+     }

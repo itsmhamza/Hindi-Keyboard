@@ -16,6 +16,7 @@
 
 package dev.patrickgold.florisboard.ime.text.smartbar
 
+import android.animation.ObjectAnimator
 import android.content.Context
 import android.graphics.Canvas
 import android.os.Build
@@ -45,6 +46,16 @@ import kotlinx.coroutines.MainScope
 import kotlinx.coroutines.launch
 import java.lang.ref.WeakReference
 import kotlin.math.roundToInt
+import android.view.animation.Animation
+
+import android.view.animation.RotateAnimation
+import android.animation.PropertyValuesHolder
+
+
+
+
+
+
 
 /**
  * View class which manages the state and the UI of the Smartbar, a key element in the usefulness
@@ -135,6 +146,41 @@ class SmartbarView : LinearLayout, FlorisBoard.EventListener {
         binding.backButton.setOnClickListener {
             eventListener?.get()?.onSmartbarBackButtonPressed()
         }
+
+        //  Animations SmartBar Views
+
+//        val rotatea = RotateAnimation(
+//            0f, 360f,
+//            Animation.RELATIVE_TO_SELF, 0.5f,
+//            Animation.RELATIVE_TO_SELF, 0.5f
+//        )
+//
+//        rotatea.duration = 1500
+//        rotatea.repeatCount = Animation.INFINITE
+//        binding.quickActionVoice.startAnimation(rotatea)
+//        val rotate = RotateAnimation(
+//            0f, 360f,
+//            Animation.RELATIVE_TO_SELF, 0.5f,
+//            Animation.RELATIVE_TO_SELF, 0.5f
+//        )
+//
+//        rotate.duration = 1500
+//        rotate.repeatCount = Animation.INFINITE
+//        binding.quickActionMic.startAnimation(rotate)
+//
+//        val scaleDown: ObjectAnimator = ObjectAnimator.ofPropertyValuesHolder(
+//            binding.quickActionTheme,
+//            PropertyValuesHolder.ofFloat("scaleX", 1.2f),
+//            PropertyValuesHolder.ofFloat("scaleY", 1.2f)
+//        )
+//        scaleDown.duration = 800
+//
+//        scaleDown.repeatCount = ObjectAnimator.INFINITE
+//        scaleDown.repeatMode = ObjectAnimator.REVERSE
+//
+//        scaleDown.start()
+
+
 
         binding.clipboardCursorRow.isSmartbarKeyboardView = true
         mainScope.launch(Dispatchers.Default) {

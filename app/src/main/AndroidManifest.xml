@@ -25,9 +25,6 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
-            android:name=".ui.SplashActivity"
-            android:exported="false" />
-        <activity
             android:name=".ui.TranslatedActivity"
             android:exported="false" />
         <activity
