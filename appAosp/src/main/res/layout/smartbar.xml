@@ -76,7 +76,14 @@
                 android:contentDescription="@string/smartbar__mic_context"
                 android:src="@drawable/ic_icn_learn_english"/>
 
-<!--            <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton-->
+            <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton
+                android:id="@+id/quick_action_switch_keyboard"
+                style="@style/SmartbarQuickActionskb"
+                android:contentDescription="@string/smartbar__quick_action__open_settings"
+                android:src="@drawable/ic_icn_learn_english"/>
+
+
+            <!--            <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton-->
 <!--                android:id="@+id/quick_action_switch_keyboard"-->
 <!--                style="@style/SmartbarQuickText"/>-->
 

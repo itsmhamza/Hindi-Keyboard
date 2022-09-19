@@ -129,7 +129,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
+            <EditText
                 android:id="@+id/textView4"
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="wrap_content"
