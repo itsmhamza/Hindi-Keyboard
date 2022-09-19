@@ -23,15 +23,15 @@ class SplashActivity : AppCompatActivity(), View.OnClickListener {
         uiChanges()
 
         isFirstTime = this.getMyPrefs().getBoolean("isFirstTime", true)
-//        if (isFirstTime) {
-//            this.editMyPrefs {
-//                putBoolean("isFirstTime", false)
-//            }
-//            Theme.writeThemeToPrefs(
-//                PrefHelper.getDefaultInstance(this),
-//                Theme.fromJsonFile(this, "ime/theme/floris_day.json")!!
-//            )
-//        }
+        if (isFirstTime) {
+            this.editMyPrefs {
+                putBoolean("isFirstTime", false)
+            }
+            Theme.writeThemeToPrefs(
+                PrefHelper.getDefaultInstance(this),
+                Theme.fromJsonFile(this, "ime/theme/floris_day.json")!!
+            )
+        }
     }
     private fun uiChanges() {
         splashbinding.btnstart.setOnClickListener(this)
