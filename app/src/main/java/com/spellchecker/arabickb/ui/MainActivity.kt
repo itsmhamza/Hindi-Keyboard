@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
     private lateinit var mainbinding:ActivityMainBinding
     lateinit var navController: NavController
     var perdialogscreen : PersmissionDiaog?=null
-    private val PERMISSIONREQUEST= 48
+    private val PERMISSIONREQUEST= 49
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         mainbinding=ActivityMainBinding.inflate(layoutInflater)
