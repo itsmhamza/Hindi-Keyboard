@@ -32,6 +32,7 @@ import com.spellchecker.arabickb.databinding.PermiisionlayoutBinding
 import com.spellchecker.arabickb.fragments.*
 import dev.patrickgold.florisboard.ime.core.FlorisBoard
 
+
 class MainActivity : AppCompatActivity(),View.OnClickListener {
     private lateinit var mainbinding:ActivityMainBinding
     lateinit var navController: NavController
