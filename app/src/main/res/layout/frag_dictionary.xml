@@ -169,7 +169,6 @@
             android:layout_width="match_parent"
             android:layout_height="@dimen/_90sdp">
 
-
             <ImageView
                 android:id="@+id/alumni_icon"
                 android:layout_width="wrap_content"

@@ -37,12 +37,14 @@
         <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/app/src/main/res/layout/activity_main.xml" value="0.25" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/app/src/main/res/layout/activity_splash.xml" value="0.171875" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/app/src/main/res/layout/frag_dictionary.xml" value="0.25" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/app/src/main/res/layout/frag_voice_translate.xml" value="0.264" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/app/src/main/res/layout/menu.xml" value="0.25" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/appAosp/src/main/res/drawable/bg_gray_oval.xml" value="0.2555" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/appAosp/src/main/res/drawable/button_transparent_bg_on_press_with_border.xml" value="0.2105" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/appAosp/src/main/res/drawable/ic_icn_speak_translate.xml" value="0.2555" />
         <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/appAosp/src/main/res/layout/activity_splash.xml" value="0.171875" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/appAosp/src/main/res/layout/smartbar.xml" value="0.264" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/appAosp/src/main/res/layout/smartbar.xml" value="0.4" />
+        <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/appAosp/src/main/res/layout/smartbarviews.xml" value="0.25" />
         <entry key="app/src/main/res/drawable/bg_input.xml" value="0.1515" />
         <entry key="app/src/main/res/drawable/bg_output.xml" value="0.2" />
         <entry key="app/src/main/res/drawable/ic_dropdown.xml" value="0.133" />

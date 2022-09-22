@@ -141,14 +141,14 @@ class TextInputManager private constructor(val context: Context) : CoroutineScop
                     activeEditorInstance.commitText(it)
                 }
 //                florisboard.setActiveInput(R.id.text_input)
-                smartbarView?.binding?.quickActionMic?.setBackgroundResource(R.drawable.oval_red)
+            //    smartbarView?.binding?.quickActionMic?.setBackgroundResource(R.drawable.oval_red)
 
             }
 
             override fun onEndOfSpeech() {
                 speechRecognition?.stopListen()
 //                florisboard.setActiveInput(R.id.text_input)
-                smartbarView?.binding?.quickActionMic?.setBackgroundResource(R.drawable.oval_red)
+            //    smartbarView?.binding?.quickActionMic?.setBackgroundResource(R.drawable.oval_red)
 
                 smartbarView
             }
@@ -156,7 +156,7 @@ class TextInputManager private constructor(val context: Context) : CoroutineScop
             override fun onError(error: Int) {
                 speechRecognition?.stopListen()
 //                florisboard.setActiveInput(R.id.text_input)
-                smartbarView?.binding?.quickActionMic?.setBackgroundResource(R.drawable.oval_red)
+            //    smartbarView?.binding?.quickActionMic?.setBackgroundResource(R.drawable.oval_red)
 
             }
         }
@@ -451,7 +451,7 @@ class TextInputManager private constructor(val context: Context) : CoroutineScop
                 speechRecognition?.listenSpeech {
                     // lambda for handling extra functionality before invoking the listener
 //                    florisboard.setActiveInput(R.id.mic_input)
-                    smartbarView?.binding?.quickActionMic?.setBackgroundResource(R.drawable.oval_green)
+         //           smartbarView?.binding?.quickActionMic?.setBackgroundResource(R.drawable.oval_green)
                 }
 
             }
@@ -1098,7 +1098,7 @@ class TextInputManager private constructor(val context: Context) : CoroutineScop
 
         if (Subtype.DEFAULT == Subtype(-1, Locale.ENGLISH, "qwerty")) {
             changeCaps(false)
-            changeDefaultKeyboardJson(-1, Locale.ENGLISH, "tamil")
+            changeDefaultKeyboardJson(-1, Locale.ENGLISH, "hindi")
         } else {
             changeDefaultKeyboardJson(-1, Locale.ENGLISH, "qwerty")
         }
