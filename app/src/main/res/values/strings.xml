@@ -13,4 +13,5 @@
     <string name="permissiongrant">Allow Permission</string>
     <string name="Nodatafound">Press mic and Speak</string>
     <string name="keyboard">Keyboard</string>
+    <string name="quiz">What is the meaning of inverntor?</string>
 </resources>

@@ -7,6 +7,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.spellchecker.arabickb.databinding.FragDictionaryBinding
+import com.spellchecker.arabickb.ui.LearndailyquizActivity
 import com.spellchecker.arabickb.ui.LearndailywordActivity
 
 
@@ -33,6 +34,11 @@ class DictionaryFragment:Fragment() {
 
         fragdicbinding.wordCard.setOnClickListener {
             val intent = Intent(activity,LearndailywordActivity::class.java)
+            startActivity(intent)
+        }
+
+        fragdicbinding.quizCard.setOnClickListener {
+            val intent = Intent(activity, LearndailyquizActivity::class.java)
             startActivity(intent)
         }
     }
