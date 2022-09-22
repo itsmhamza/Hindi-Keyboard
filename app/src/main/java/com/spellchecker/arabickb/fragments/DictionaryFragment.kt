@@ -1,11 +1,13 @@
 package com.spellchecker.arabickb.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.spellchecker.arabickb.databinding.FragDictionaryBinding
+import com.spellchecker.arabickb.ui.LearndailywordActivity
 
 
 class DictionaryFragment:Fragment() {
@@ -29,6 +31,9 @@ class DictionaryFragment:Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-
+        fragdicbinding.wordCard.setOnClickListener {
+            val intent = Intent(activity,LearndailywordActivity::class.java)
+            startActivity(intent)
+        }
     }
 }
