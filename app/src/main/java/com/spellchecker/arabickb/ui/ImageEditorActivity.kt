@@ -94,7 +94,7 @@ class ImageEditorActivity : AppCompatActivity() {
         binding.textcolor.setOnClickListener {
             ColorPickerPopup.Builder(this)
                 .enableAlpha(true) // Enable alpha slider or not
-                .okTitle("Choose")
+                .okTitle("Apply")
                 .cancelTitle("Cancel")
                 .showIndicator(true)
                 .showValue(true)
