@@ -52,10 +52,11 @@
 
 
     <View
+        android:id="@+id/view5"
         android:layout_width="match_parent"
         android:layout_height="@dimen/_1sdp"
-        android:background="@color/grish"
         android:layout_marginTop="@dimen/_10sdp"
+        android:background="@color/grish"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/workrecyclerView" />

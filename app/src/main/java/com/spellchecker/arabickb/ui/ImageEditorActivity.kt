@@ -3,11 +3,8 @@ package com.spellchecker.arabickb.ui
 import android.R.attr.*
 import android.annotation.SuppressLint
 import android.app.Dialog
-import android.content.Context
 import android.graphics.*
-import android.net.Uri
 import android.os.Bundle
-import android.provider.MediaStore
 import android.text.Html
 import android.text.Layout
 import android.view.Window
@@ -23,14 +20,13 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.spellchecker.arabickb.R
 import com.spellchecker.arabickb.adapters.emojiAdopter
 import com.spellchecker.arabickb.databinding.ActivityImageEditorBinding
-import com.spellchecker.arabickb.utils.Cache
 import com.spellchecker.arabickb.utils.Cache.saveImgToCache
 import com.spellchecker.arabickb.utils.EMOJIS.emojis
 import com.xiaopo.flying.sticker.Sticker
 import com.xiaopo.flying.sticker.TextSticker
 import top.defaults.colorpicker.ColorPickerPopup
 import top.defaults.colorpicker.ColorPickerPopup.ColorPickerObserver
-import java.io.ByteArrayOutputStream
+import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -42,6 +38,7 @@ class ImageEditorActivity : AppCompatActivity() {
 
     companion object {
         var Editimage: Bitmap? = null
+        var Date: String? = null
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -142,23 +139,11 @@ class ImageEditorActivity : AppCompatActivity() {
         binding.save.setOnClickListener {
             binding.stickerview.setDrawingCacheEnabled(true)
             val bitmap: Bitmap = Bitmap.createBitmap(binding.stickerview.getDrawingCache())
-          //  binding.stickerview.invalidate()
             saveImgToCache(bitmap,"${System.currentTimeMillis()}")
+            val sdf = SimpleDateFormat("M/dd/yyyy")
+            Date = sdf.format(Date())
             Toast.makeText(this, "Your Image is saved", Toast.LENGTH_SHORT).show()
             finish()
         }
-
     }
-    fun getImageUri(inContext: Context, inImage: Bitmap): Uri? {
-        val bytes = ByteArrayOutputStream()
-        inImage.compress(Bitmap.CompressFormat.JPEG, 100, bytes)
-        val path: String = MediaStore.Images.Media.insertImage(
-            inContext.getContentResolver(),
-            inImage,
-            "Title",
-            null
-        )
-        return Uri.parse(path)
-    }
-
 }
