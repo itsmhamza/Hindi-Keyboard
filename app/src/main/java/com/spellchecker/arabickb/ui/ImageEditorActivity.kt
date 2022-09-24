@@ -10,7 +10,6 @@ import android.os.Bundle
 import android.provider.MediaStore
 import android.text.Html
 import android.text.Layout
-import android.util.Log
 import android.view.Window
 import android.widget.EditText
 import android.widget.RelativeLayout
@@ -24,10 +23,9 @@ import com.google.android.material.bottomsheet.BottomSheetDialog
 import com.spellchecker.arabickb.R
 import com.spellchecker.arabickb.adapters.emojiAdopter
 import com.spellchecker.arabickb.databinding.ActivityImageEditorBinding
+import com.spellchecker.arabickb.utils.Cache
+import com.spellchecker.arabickb.utils.Cache.saveImgToCache
 import com.spellchecker.arabickb.utils.EMOJIS.emojis
-import com.spellchecker.arabickb.utils.FileExternalPath
-import com.spellchecker.arabickb.utils.FileExternalPath.copyUriToExternalFilesDir
-import com.spellchecker.arabickb.utils.FileExternalPath.getFileNameByUri
 import com.xiaopo.flying.sticker.Sticker
 import com.xiaopo.flying.sticker.TextSticker
 import top.defaults.colorpicker.ColorPickerPopup
@@ -40,6 +38,7 @@ class ImageEditorActivity : AppCompatActivity() {
     private lateinit var binding: ActivityImageEditorBinding
     private lateinit var adopter: emojiAdopter
     var emoji: ArrayList<String> = ArrayList()
+
 
     companion object {
         var Editimage: Bitmap? = null
@@ -143,9 +142,10 @@ class ImageEditorActivity : AppCompatActivity() {
         binding.save.setOnClickListener {
             binding.stickerview.setDrawingCacheEnabled(true)
             val bitmap: Bitmap = Bitmap.createBitmap(binding.stickerview.getDrawingCache())
-            val ImageUri = getImageUri(this,bitmap)
-            val imagename = getFileNameByUri(ImageUri!!)
-            copyUriToExternalFilesDir(ImageUri,imagename)
+          //  binding.stickerview.invalidate()
+            saveImgToCache(bitmap,"${System.currentTimeMillis()}")
+            Toast.makeText(this, "Your Image is saved", Toast.LENGTH_SHORT).show()
+            finish()
         }
 
     }
