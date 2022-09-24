@@ -4,10 +4,10 @@ import android.app.Activity
 import android.graphics.Bitmap
 import android.net.Uri
 import android.text.TextUtils
+import androidx.core.content.FileProvider
 import java.io.File
 import java.io.FileOutputStream
 import java.io.IOException
-import kotlin.jvm.JvmOverloads
 
 object Cache {
 
@@ -20,9 +20,11 @@ object Cache {
     fun Activity.saveImgToCache(bitmap: Bitmap, name: String?): File? {
         var cachePath: File? = null
         var fileName: String? = TEMP_FILE_NAME
+
         if (!TextUtils.isEmpty(name)) {
             fileName = name
         }
+
         try {
             cachePath = File(getCacheDir(), CHILD_DIR)
             cachePath.mkdirs()
@@ -34,5 +36,4 @@ object Cache {
         }
         return cachePath
     }
-
 }
