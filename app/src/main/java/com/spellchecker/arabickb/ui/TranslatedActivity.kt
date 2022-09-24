@@ -9,6 +9,8 @@ import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import com.spellchecker.arabickb.databinding.ActivityTranslatedBinding
+import com.spellchecker.arabickb.prefrences.SharedPrefres
+import com.spellchecker.arabickb.utils.LangSelection
 import java.util.*
 
 
@@ -17,10 +19,12 @@ class TranslatedActivity : AppCompatActivity() ,TextToSpeech.OnInitListener{
     private var tts: TextToSpeech?=null
     var translate:String?=null
     var translated:String?=null
+    var prefs: SharedPrefres?=null
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityTranslatedBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        prefs= SharedPrefres(this)
         tts = TextToSpeech(this,this)
 
         val intent = getIntent()
@@ -29,7 +33,10 @@ class TranslatedActivity : AppCompatActivity() ,TextToSpeech.OnInitListener{
 
         binding.translate.setText(translate)
         binding.translated.setText(translated)
-
+        binding.inptlang.text=prefs?.lannameposition
+        binding.inptlang.text=prefs?.outputlangposition
+        binding.inputflag.setImageResource(LangSelection.Flagimg[prefs!!.inputlangpos])
+        binding.outputflag.setImageResource(LangSelection.Flagimg[prefs!!.outputlangpos])
         binding.copy.setOnClickListener {
             val clipboardManager = getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
             val clipdata = ClipData.newPlainText("text", translate)

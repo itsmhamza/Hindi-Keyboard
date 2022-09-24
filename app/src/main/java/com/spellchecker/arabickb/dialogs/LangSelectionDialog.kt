@@ -1,27 +1,35 @@
-package com.spellchecker.arabickb.ui
+package com.spellchecker.arabickb.dialogs
 
 import android.os.Bundle
-import android.widget.Toast
-import androidx.appcompat.app.AppCompatActivity
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
 import androidx.appcompat.widget.SearchView
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.google.android.material.bottomsheet.BottomSheetBehavior
+import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import com.spellchecker.arabickb.R
 import com.spellchecker.arabickb.adapters.LanguageSelectionAdapter
 import com.spellchecker.arabickb.appinterfaces.onItemClickListener
 import com.spellchecker.arabickb.databinding.ActivityLanguageListBinding
 import com.spellchecker.arabickb.utils.LangSelection
 import com.spellchecker.arabickb.utils.Languages
 
-class LanguageListActivity : AppCompatActivity(), onItemClickListener {
-    lateinit var lanlistbinding:ActivityLanguageListBinding
-     var lanseleadapter:LanguageSelectionAdapter?=null
-    var langlistner:onItemClickListener?=null
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        lanlistbinding=ActivityLanguageListBinding.inflate(layoutInflater)
-        setContentView(lanlistbinding.root)
-        langlistner=this
-            uiViewsData()
+class LangSelectionDialog(var callback: onItemClickListener?): BottomSheetDialogFragment() {
+    lateinit var lanlistbinding: ActivityLanguageListBinding
+    var lanseleadapter: LanguageSelectionAdapter?=null
+    var langlistner: onItemClickListener?=null
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View?
+    {
+        lanlistbinding = ActivityLanguageListBinding.inflate(layoutInflater, container, false)
+        langlistner=callback
+        return lanlistbinding.root
+    }
 
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        uiViewsData()
     }
 
     private fun uiViewsData() {
@@ -40,13 +48,9 @@ class LanguageListActivity : AppCompatActivity(), onItemClickListener {
         })
 
         lanlistbinding.rvlang.apply {
-            layoutManager=LinearLayoutManager(this@LanguageListActivity)
+            layoutManager= LinearLayoutManager(requireContext())
             lanseleadapter= LanguageSelectionAdapter(LangSelection.Lang,langlistner!!)
             lanlistbinding.rvlang.adapter=lanseleadapter
         }
-    }
-
-    override fun onItemClick(Item: Languages) {
-Toast.makeText(this@LanguageListActivity,Item.name,Toast.LENGTH_SHORT).show()
     }
 }
