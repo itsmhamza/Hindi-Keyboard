@@ -7,13 +7,18 @@
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/bg_output.xml" value="0.103" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/bg_searchbar.xml" value="0.1435" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/circleselected.xml" value="0.103" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/dictionary_corner_layout.xml" value="0.1275" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/ic_icn_copy.xml" value="0.1255" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/input_bg.xml" value="0.103" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/drawable/pemissionshape.xml" value="0.1255" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/activity_image_editor.xml" value="0.18923076923076923" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/activity_language_list.xml" value="0.1875" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/activity_main.xml" value="0.19947916666666668" />
-        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/activity_translated.xml" value="0.1875" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/activity_splash.xml" value="0.1921875" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/activity_translated.xml" value="0.2" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/frag_dictionary.xml" value="0.1921875" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/frag_image_editor.xml" value="0.1921875" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/frag_keyboard.xml" value="0.1921875" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/frag_sp_translate.xml" value="0.18" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/frag_voice_translate.xml" value="0.19947916666666668" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/item_lang_selection.xml" value="0.16" />
@@ -23,32 +28,10 @@
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/permiisionlayout.xml" value="0.2" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/toolbar.xml" value="0.18" />
         <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/layout/voice_item.xml" value="0.2" />
+        <entry key="..\:/Usama abbasi project/Arabickb/app/src/main/res/mipmap-anydpi-v26/ic_launcher.xml" value="0.1275" />
         <entry key="..\:/Usama abbasi project/Arabickb/appAosp/src/main/res/layout/ad_layout.xml" value="0.1" />
         <entry key="..\:/Usama abbasi project/Arabickb/appAosp/src/main/res/layout/key_popup_extended_view.xml" value="0.1" />
         <entry key="..\:/Usama abbasi project/Arabickb/appAosp/src/main/res/layout/native_banner_ad_layout.xml" value="0.1" />
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/Hindi-Keyboard/app/src/main/res/layout/activity_main.xml" value="0.22" />
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/Hindi-Keyboard/app/src/main/res/layout/frag_dictionary.xml" value="0.18" />
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/Hindi-Keyboard/app/src/main/res/layout/frag_image_editor.xml" value="0.1824074074074074" />
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/Hindi-Keyboard/app/src/main/res/layout/frag_voice_translate.xml" value="0.25" />
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/Hindi-Keyboard/app/src/main/res/layout/toolbarapp.xml" value="0.2" />
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/Hindi-Keyboard/appAosp/src/main/res/drawable/bg_gray_oval.xml" value="0.1215" />
-        <entry key="..\:/Users/Dell/AndroidStudioProjects/Hindi-Keyboard/appAosp/src/main/res/layout/smartbarviews.xml" value="0.14621633176571183" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/app/src/main/res/drawable/translated_shape.xml" value="0.2105" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/app/src/main/res/layout/activity_learndailyquiz.xml" value="0.264" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/app/src/main/res/layout/activity_learndailyword.xml" value="0.25" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/app/src/main/res/layout/activity_splash.xml" value="0.171875" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/app/src/main/res/layout/frag_dictionary.xml" value="0.25" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/app/src/main/res/layout/frag_voice_translate.xml" value="0.264" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/app/src/main/res/layout/menu.xml" value="0.25" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/appAosp/src/main/res/drawable/bg_gray_oval.xml" value="0.2555" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/appAosp/src/main/res/drawable/button_transparent_bg_on_press_with_border.xml" value="0.2105" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/appAosp/src/main/res/drawable/ic_icn_speak_translate.xml" value="0.2555" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/appAosp/src/main/res/layout/activity_splash.xml" value="0.171875" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/appAosp/src/main/res/layout/smartbar.xml" value="0.4" />
-        <entry key="..\:/Users/hp/AndroidStudioProjects/Hindi-Keyboard/appAosp/src/main/res/layout/smartbarviews.xml" value="0.25" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Hindi-Keyboard2/app/src/main/res/layout/frag_dictionary.xml" value="0.24895833333333334" />
-        <entry key="..\:/Users/user/AndroidStudioProjects/Hindi-Keyboard2/app/src/main/res/xml/file_paths.xml" value="0.25" />
         <entry key="app/src/main/res/drawable/bg_input.xml" value="0.1515" />
         <entry key="app/src/main/res/drawable/bg_output.xml" value="0.2" />
         <entry key="app/src/main/res/drawable/ic_dropdown.xml" value="0.133" />

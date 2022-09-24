@@ -36,8 +36,8 @@ class TranslatedActivity : AppCompatActivity() ,TextToSpeech.OnInitListener{
 
         binding.translate.setText(translate)
         binding.translated.setText(translated)
-        binding.inptlang.text=prefs?.lannameposition
-        binding.inptlang.text=prefs?.outputlangposition
+        binding.inptlang.text=LangSelection.Langnames[prefs!!.inputlangpos]
+        binding.outputlang.text=LangSelection.Langnames[prefs!!.outputlangpos]
         binding.inputflag.setImageResource(LangSelection.Flagimg[prefs!!.inputlangpos])
         binding.outputflag.setImageResource(LangSelection.Flagimg[prefs!!.outputlangpos])
         binding.copy.setOnClickListener {
