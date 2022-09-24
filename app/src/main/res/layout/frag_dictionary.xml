@@ -129,7 +129,7 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
 
-            <TextView
+            <EditText
                 android:id="@+id/textView4"
                 android:layout_width="@dimen/_200sdp"
                 android:layout_height="wrap_content"
@@ -168,7 +168,6 @@
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="@dimen/_90sdp">
-
 
             <ImageView
                 android:id="@+id/alumni_icon"
@@ -225,7 +224,6 @@
                 app:layout_constraintEnd_toEndOf="parent" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
-
 
 
     </com.google.android.material.card.MaterialCardView>

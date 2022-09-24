@@ -27,6 +27,9 @@ class TranslatedActivity : AppCompatActivity() ,TextToSpeech.OnInitListener{
         prefs= SharedPrefres(this)
         tts = TextToSpeech(this,this)
 
+        binding.back.setOnClickListener {
+            finish()
+        }
         val intent = getIntent()
         translate = intent!!.getStringExtra("Translate")
         translated = intent!!.getStringExtra("Translated")

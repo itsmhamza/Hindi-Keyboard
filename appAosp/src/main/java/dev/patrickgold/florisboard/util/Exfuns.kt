@@ -25,7 +25,7 @@ fun Context.showToast(msg: String) {
 fun getamilSubtype(isShift: Boolean = false): Subtype {
     val mode = when {
         isShift -> "telugushift"
-        else -> "tamil"
+        else -> "hindi"
     }
     return Subtype(-1, Locale.ENGLISH, mode)
 }

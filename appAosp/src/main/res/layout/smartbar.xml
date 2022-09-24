@@ -36,11 +36,7 @@
     <dev.patrickgold.florisboard.ime.core.FlorisViewFlipper
         android:id="@+id/main_area"
         android:layout_width="wrap_content"
-        android:layout_height="match_parent"
-        app:layout_constrainedWidth="true"
-        app:layout_constraintStart_toEndOf="@id/action_start_area"
-        app:layout_constraintEnd_toStartOf="@id/action_end_area"
-        app:layout_constraintTop_toTopOf="parent">
+        android:layout_height="match_parent">
 
         <LinearLayout
             android:id="@+id/quick_actions"
@@ -49,40 +45,49 @@
             <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton
                 android:id="@+id/quick_action_voice"
                 style="@style/SmartbarQuickActionskb"
+                android:layout_marginLeft="@dimen/_8sdp"
                 android:contentDescription="@string/smartbar__mic_context"
                 android:src="@drawable/ic_icn_speak_translate"/>
 
             <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton
                 android:id="@+id/quick_action_voice_typing"
                 style="@style/SmartbarQuickActionskb"
+                android:layout_marginLeft="@dimen/_5sdp"
                 android:contentDescription="@string/smartbar__mic_context"
                 android:src="@drawable/ic_icn_voice_translator"/>
 
             <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton
                 android:id="@+id/quick_action_voice_translator"
                 style="@style/SmartbarQuickActionskb"
+                android:layout_marginLeft="@dimen/_5sdp"
                 android:contentDescription="@string/smartbar__mic_context"
                 android:src="@drawable/ic_icn_dictionary"/>
 
             <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton
                 android:id="@+id/quick_action_theme"
                 style="@style/SmartbarQuickActionskb"
+                android:layout_marginLeft="@dimen/_5sdp"
                 android:contentDescription="@string/smartbar__mic_context"
                 android:src="@drawable/ic_icn_image_edit"/>
 
             <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton
                 android:id="@+id/quick_action_settings"
                 style="@style/SmartbarQuickActionskb"
+                android:layout_marginLeft="@dimen/_5sdp"
                 android:contentDescription="@string/smartbar__mic_context"
                 android:src="@drawable/ic_icn_learn_english"/>
 
-<!--            <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton-->
-<!--                android:id="@+id/quick_action_switch_keyboard"-->
-<!--                style="@style/SmartbarQuickText"/>-->
+            <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton
+                android:id="@+id/quick_action_switch_keyboard"
+                style="@style/SmartbarQuickActionskb"
+                android:layout_marginLeft="@dimen/_5sdp"
+                android:contentDescription="@string/smartbar__quick_action__open_settings"
+                android:src="@drawable/ic_icn_learn_english"/>
 
             <dev.patrickgold.florisboard.ime.text.smartbar.SmartbarQuickActionButton
                 android:id="@+id/quick_action_mic"
                 style="@style/SmartbarQuickActionsmic"
+                android:layout_marginLeft="@dimen/_5sdp"
                 android:contentDescription="@string/smartbar__mic_context"
                 android:src="@drawable/ic_icn_mic"/>
 

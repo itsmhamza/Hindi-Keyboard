@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/_10sdp"
-            android:text="Translation"
+            android:text="Learn Daily word"
             android:textColor="@color/white"
             android:textSize="@dimen/_18sdp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -43,7 +43,7 @@
         <ImageView
             android:layout_width="@dimen/_20sdp"
             android:layout_height="@dimen/_20sdp"
-            android:src="@drawable/icn_bookmark"
+            android:src="@drawable/icn_sharee"
             android:id="@+id/bookmark"
             android:layout_marginEnd="@dimen/_10sdp"
             app:layout_constraintBottom_toBottomOf="parent"
@@ -76,7 +76,6 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/inputflag"
                 android:layout_width="@dimen/_25sdp"
                 android:layout_height="@dimen/_25sdp"
                 android:layout_marginStart="@dimen/_10sdp"
@@ -84,7 +83,6 @@
                 android:src="@drawable/english" />
 
             <TextView
-                android:id="@+id/inptlang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_45sdp"
@@ -152,7 +150,6 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
-                android:id="@+id/outputflag"
                 android:layout_width="@dimen/_25sdp"
                 android:layout_height="@dimen/_25sdp"
                 android:layout_marginStart="@dimen/_10sdp"
@@ -160,7 +157,6 @@
                 android:src="@drawable/hindi" />
 
             <TextView
-                android:id="@+id/utputlang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_45sdp"
