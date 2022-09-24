@@ -226,6 +226,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+
                 android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_20sdp"
                 android:id="@+id/inputlanguageimage"
@@ -252,7 +253,7 @@
             android:layout_width="@dimen/_80sdp"
             android:layout_height="@dimen/_30sdp"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toStartOf="@+id/cardView7"
+            app:layout_constraintEnd_toStartOf="@+id/outputputlangview"
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
@@ -277,7 +278,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView4"
+            android:id="@+id/inputlangview"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_marginStart="@dimen/_5sdp"
@@ -293,7 +294,7 @@
         </androidx.cardview.widget.CardView>
 
         <androidx.cardview.widget.CardView
-            android:id="@+id/cardView7"
+            android:id="@+id/outputputlangview"
             android:layout_width="@dimen/_30sdp"
             android:layout_marginEnd="@dimen/_10sdp"
             android:layout_height="@dimen/_30sdp"

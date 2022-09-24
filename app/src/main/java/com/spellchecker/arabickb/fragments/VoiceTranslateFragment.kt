@@ -15,18 +15,25 @@ import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.koushikdutta.async.future.FutureCallback
 import com.koushikdutta.ion.Ion
+import com.spellchecker.arabickb.R
+import com.spellchecker.arabickb.appinterfaces.onItemClickListener
 import com.spellchecker.arabickb.databinding.FragVoiceTranslateBinding
+import com.spellchecker.arabickb.dialogs.LangSelectionDialog
+import com.spellchecker.arabickb.prefrences.SharedPrefres
 import com.spellchecker.arabickb.ui.TranslatedActivity
+import com.spellchecker.arabickb.utils.LangSelection
+import com.spellchecker.arabickb.utils.Languages
 import org.json.JSONArray
 import org.json.JSONException
 
 
-class VoiceTranslateFragment:Fragment() {
+class VoiceTranslateFragment:Fragment(),View.OnClickListener,onItemClickListener {
 
     lateinit var fragvoicebinding:FragVoiceTranslateBinding
     private var progressDialog: ProgressDialog? = null
     private val REQUEST_CODE = 100
-
+    var prefs:SharedPrefres?=null
+    var callback: onItemClickListener?=null
     companion object {
 
         fun newInstance() =
@@ -37,37 +44,29 @@ class VoiceTranslateFragment:Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+
         fragvoicebinding= FragVoiceTranslateBinding.inflate(inflater,container,false)
-        // Inflate the layout for this fragment
+
         return fragvoicebinding.root
     }
+   fun uiViews(){
+       callback=this
+       // Inflate the layout for this fragment
+       prefs= SharedPrefres(requireContext())
+       fragvoicebinding.inputlangview.setOnClickListener(this)
+       fragvoicebinding.outputputlangview.setOnClickListener(this)
+       fragvoicebinding.translate.setOnClickListener(this)
+       fragvoicebinding.copy.setOnClickListener(this)
+       fragvoicebinding.del.setOnClickListener(this)
+       fragvoicebinding.translate.setOnClickListener(this)
+       fragvoicebinding.inputlanguage.text= LangSelection.Langnames[prefs!!.inputlangpos]
+       fragvoicebinding.inputlanguageimage.setImageResource(LangSelection.Flagimg[prefs!!.inputlangpos])
+       fragvoicebinding.outputlanguage.text= LangSelection.Langnames[prefs!!.outputlangpos]
+       fragvoicebinding.outputlanguageimage.setImageResource(LangSelection.Flagimg[prefs!!.outputlangpos])
+   }
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        fragvoicebinding.translate.setOnClickListener {
-            if (fragvoicebinding.texttranslate.text.isNotEmpty()) {
-                translate(fragvoicebinding.texttranslate.text.toString())
-            }else{
-                Toast.makeText(activity, "Empty Text Field", Toast.LENGTH_SHORT).show()
-            }
-        }
-        fragvoicebinding.copy.setOnClickListener {
-            if(fragvoicebinding.texttranslate.text.isNotEmpty()) {
-                val clipboardManager =
-                    activity?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
-                val clipdata =
-                    ClipData.newPlainText("text", fragvoicebinding.texttranslate.text.toString())
-                clipboardManager.setPrimaryClip(clipdata)
-                Toast.makeText(activity, "Text copied to clipboard", Toast.LENGTH_LONG).show()
-            }else{
-                Toast.makeText(activity, "Empty Text Field", Toast.LENGTH_SHORT).show()
-            }
-        }
-        fragvoicebinding.del.setOnClickListener {
-            fragvoicebinding.texttranslate.text.clear()
-        }
-        fragvoicebinding.mic.setOnClickListener {
-            speak_()
-        }
+        uiViews()
     }
 
     private fun translate(word: String) {
@@ -83,11 +82,12 @@ class VoiceTranslateFragment:Fragment() {
             .setBodyParameter("client", "gtx")
             .setBodyParameter(
                 "sl",
-                "en"
+                LangSelection.Langcode[prefs!!.inputlangpos]
+
             )
             .setBodyParameter(
                 "tl",
-                "hi"
+                LangSelection.Langcode[prefs!!.outputlangpos]
             )
             .setBodyParameter("dt", "t")
             // .setBodyParameter("q", URLEncoder.encode(word.replace("+", " "), "UTF-8"))
@@ -170,4 +170,80 @@ class VoiceTranslateFragment:Fragment() {
             }
         }
     }
+
+    override fun onClick(v: View?) {
+        when(v?.id){
+            R.id.inputlangview->{
+                prefs!!.lanselectionpos=1
+                requireActivity().supportFragmentManager.let {
+                    LangSelectionDialog(callback).apply {
+                        show(it, "inputspinner")
+                    }
+                }
+            }
+            R.id.outputputlangview->{
+                prefs!!.lanselectionpos=2
+                requireActivity().supportFragmentManager.let {
+                    LangSelectionDialog(callback).apply {
+                        show(it, "inputspinner")
+                    }
+                }
+            }
+            R.id.translate->
+            {
+                if (fragvoicebinding.texttranslate.text.isNotEmpty()) {
+                    translate(fragvoicebinding.texttranslate.text.toString())
+                }else{
+                    Toast.makeText(activity, "Empty Text Field", Toast.LENGTH_SHORT).show()
+                }
+            }
+            R.id.copy->
+            {
+                if(fragvoicebinding.texttranslate.text.isNotEmpty()) {
+                    val clipboardManager =
+                        activity?.getSystemService(Context.CLIPBOARD_SERVICE) as ClipboardManager
+                    val clipdata =
+                        ClipData.newPlainText("text", fragvoicebinding.texttranslate.text.toString())
+                    clipboardManager.setPrimaryClip(clipdata)
+                    Toast.makeText(activity, "Text copied to clipboard", Toast.LENGTH_LONG).show()
+                }else{
+                    Toast.makeText(activity, "Empty Text Field", Toast.LENGTH_SHORT).show()
+                }
+            }
+            R.id.del->
+            {
+                fragvoicebinding.texttranslate.text.clear()
+            }
+            R.id.mic->
+            {
+                speak_()
+            }
+        }
+    }
+
+    override fun onItemClick(Item: Languages) {
+        if(prefs!!.lanselectionpos == 1)
+        {
+            fragvoicebinding.inputlanguage.text= Item.name
+            fragvoicebinding.inputlanguageimage.setImageResource(Item.image)
+            for (i in 0 until LangSelection.Langnames.size){
+                if (Item.name.contains(LangSelection.Langnames[i])){
+                    prefs!!.inputlangpos=i
+                }
+            }
+        }
+
+
+        else{
+            fragvoicebinding.outputlanguage.text= Item.name
+            fragvoicebinding.outputlanguageimage.setImageResource(Item.image)
+            for (i in 0 until LangSelection.Langnames.size){
+                if (Item.name.contains(LangSelection.Langnames[i])){
+                    prefs!!.outputlangpos=i
+                }
+            }
+        }
+    }
+
+
 }

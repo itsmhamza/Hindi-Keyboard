@@ -14,15 +14,19 @@ import androidx.activity.result.contract.ActivityResultContracts
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.karumi.dexter.listener.SnackbarUtils.show
 import com.spellchecker.arabickb.R
 import com.spellchecker.arabickb.adapters.LanguageSelectionAdapter
 import com.spellchecker.arabickb.adapters.VoiceAdapter
+import com.spellchecker.arabickb.appinterfaces.onItemClickListener
 import com.spellchecker.arabickb.database.*
 import com.spellchecker.arabickb.databinding.FragSpTranslateBinding
+import com.spellchecker.arabickb.dialogs.LangSelectionDialog
 import com.spellchecker.arabickb.prefrences.SharedPrefres
 import com.spellchecker.arabickb.ui.LanguageListActivity
 import com.spellchecker.arabickb.utils.CoroutineRunningTask
 import com.spellchecker.arabickb.utils.LangSelection
+import com.spellchecker.arabickb.utils.LangSelection.Flagimg
 import com.spellchecker.arabickb.utils.LangSelection.Lang
 import com.spellchecker.arabickb.utils.Languages
 import kotlinx.coroutines.CoroutineScope
@@ -33,7 +37,7 @@ import org.json.JSONArray
 import java.util.*
 
 
-class SpeakTranslateFragment:Fragment(),View.OnClickListener,LanguageSelectionAdapter.onItemClickListener
+class SpeakTranslateFragment:Fragment(),View.OnClickListener,onItemClickListener
      {
     lateinit var fragspbinding:FragSpTranslateBinding
     var adaptervoice: VoiceAdapter?=null
@@ -43,6 +47,7 @@ class SpeakTranslateFragment:Fragment(),View.OnClickListener,LanguageSelectionAd
     var inputlangcode: String? =null
     var outputlangcode: String? =null
     var contxt:Context?=null
+     var callback: onItemClickListener?=null
     lateinit var sharedmodel:SharedViewModel
 
     companion object {
@@ -56,6 +61,7 @@ class SpeakTranslateFragment:Fragment(),View.OnClickListener,LanguageSelectionAd
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
+        callback=this
         fragspbinding=FragSpTranslateBinding.inflate(inflater,container,false)
         // Inflate the layout for this fragment
         return fragspbinding.root
@@ -94,12 +100,22 @@ class SpeakTranslateFragment:Fragment(),View.OnClickListener,LanguageSelectionAd
             R.id.leftview->
             {
                 prefs!!.lanselectionpos=1
-                startActivity(Intent(requireActivity(), LanguageListActivity::class.java))
+                requireActivity().supportFragmentManager.let {
+                    LangSelectionDialog(callback).apply {
+                        show(it, "inputspinner")
+                    }
+                }
+              // startActivity(Intent(requireActivity(), LanguageListActivity::class.java))
             }
             R.id.rightview->
             {
                 prefs!!.lanselectionpos=2
-                startActivity(Intent(requireActivity(), LanguageListActivity::class.java))
+                requireActivity().supportFragmentManager.let {
+                    LangSelectionDialog(callback).apply {
+                        show(it, "outputputspinner")
+                    }
+                }
+           //  startActivity(Intent(requireActivity(), LanguageListActivity::class.java))
             }
 
         }
@@ -147,6 +163,8 @@ class SpeakTranslateFragment:Fragment(),View.OnClickListener,LanguageSelectionAd
         var inpulantemp=prefs!!.inputlangpos
         prefs!!.inputlangpos=prefs!!.outputlangpos
         prefs!!.outputlangpos= inpulantemp
+        prefs!!.lannameposition=fragspbinding.leftlabel.text.toString()
+        prefs!!.outputlanposition=fragspbinding.rightlabel.text.toString()
         fragspbinding.flagleft.setImageResource(LangSelection.Flagimg[prefs!!.inputlangpos])
         fragspbinding.flagright.setImageResource(LangSelection.Flagimg[prefs!!.outputlangpos])
     }
@@ -262,8 +280,29 @@ class SpeakTranslateFragment:Fragment(),View.OnClickListener,LanguageSelectionAd
     }
 
          override fun onItemClick(Item: Languages) {
-             fragspbinding.leftlabel.text= Item.name
-             fragspbinding.flagleft.setImageResource(Item.image)
+            if(prefs!!.lanselectionpos == 1)
+            {
+                fragspbinding.leftlabel.text= Item.name
+                fragspbinding.flagleft.setImageResource(Item.image)
+                for (i in 0 until LangSelection.Langnames.size){
+                    if (Item.name.contains(LangSelection.Langnames[i])){
+                        prefs!!.inputlangpos=i
+                    }
+                }
+            }
+
+
+else{
+                fragspbinding.rightlabel.text= Item.name
+                fragspbinding.flagright.setImageResource(Item.image)
+                for (i in 0 until LangSelection.Langnames.size){
+                    if (Item.name.contains(LangSelection.Langnames[i])){
+                        prefs!!.outputlangpos=i
+                    }
+                }
+}
+
+
          }
 
 

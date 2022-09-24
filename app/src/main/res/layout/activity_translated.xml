@@ -76,6 +76,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+                android:id="@+id/inputflag"
                 android:layout_width="@dimen/_25sdp"
                 android:layout_height="@dimen/_25sdp"
                 android:layout_marginStart="@dimen/_10sdp"
@@ -83,6 +84,7 @@
                 android:src="@drawable/english" />
 
             <TextView
+                android:id="@+id/inptlang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_45sdp"
@@ -150,6 +152,7 @@
             app:layout_constraintTop_toTopOf="parent">
 
             <ImageView
+                android:id="@+id/outputflag"
                 android:layout_width="@dimen/_25sdp"
                 android:layout_height="@dimen/_25sdp"
                 android:layout_marginStart="@dimen/_10sdp"
@@ -157,6 +160,7 @@
                 android:src="@drawable/hindi" />
 
             <TextView
+                android:id="@+id/utputlang"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="@dimen/_45sdp"

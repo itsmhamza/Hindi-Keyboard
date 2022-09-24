@@ -6,14 +6,16 @@ import android.view.ViewGroup
 import android.widget.Filter
 import android.widget.Filterable
 import androidx.recyclerview.widget.RecyclerView
+import com.spellchecker.arabickb.appinterfaces.onItemClickListener
 import com.spellchecker.arabickb.databinding.ItemLangSelectionBinding
 import com.spellchecker.arabickb.prefrences.SharedPrefres
 import com.spellchecker.arabickb.utils.LangSelection
 import com.spellchecker.arabickb.utils.Languages
+import java.io.Serializable
 import java.util.*
 
 
-class LanguageSelectionAdapter(private val language_list: ArrayList<Languages>, private val listener: LanguageSelectionAdapter.onItemClickListener):RecyclerView.Adapter<LanguageSelectionAdapter.LangViewholder>(),Filterable {
+class LanguageSelectionAdapter(private val language_list: ArrayList<Languages>, private val listener: onItemClickListener):RecyclerView.Adapter<LanguageSelectionAdapter.LangViewholder>(),Filterable {
     var prefs:SharedPrefres?=null
 var getUserModelListFiltered:List<String>?=null
 var userModelList:List<Languages>?=null
@@ -25,9 +27,7 @@ var userModelList:List<Languages>?=null
         copycountrieslist = language_list
         mlistener = listener
     }
-    interface onItemClickListener {
-        fun onItemClick(Item: Languages)
-    }
+
    inner class LangViewholder(val langbinding:ItemLangSelectionBinding):RecyclerView.ViewHolder(langbinding.root)
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): LangViewholder {
@@ -76,10 +76,12 @@ with(holder){
         holder.itemView.setOnClickListener {
             if (prefs!!.lanselectionpos==1){
 
-              //  prefs!!.inputlangpos=getLangPos(copycountrieslist[position])
+
                 prefs!!.lannameposition=copycountrieslist[position].name
+
             }
             else{
+
                 prefs!!.outputlanposition=copycountrieslist[position].name
               //  prefs!!.outputlangpos=getLangPos(copycountrieslist[position])
 
