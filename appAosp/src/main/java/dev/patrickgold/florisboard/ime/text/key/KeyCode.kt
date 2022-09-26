@@ -40,6 +40,8 @@ object KeyCode {
     const val CTRL =                         -11
     const val SHIFT_LOCK =                   -14
     const val CTRL_LOCK =                    -15
+    const val HINDI_SHIFT =                    -12
+    const val HINDI_SHIFT2 =                    -13
 
     const val ARROW_LEFT =                   -20
     const val ARROW_RIGHT =                  -21

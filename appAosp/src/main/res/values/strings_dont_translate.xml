@@ -5,7 +5,7 @@
     <string name="florisboard__privacy_policy_url" translatable="false">https://gist.github.com/patrickgold/a18f1e47468d72f0868afc69d6faaf0b</string>
 
     <string name="key__view_characters" translatable="false">ABC</string>
-    <string name="key__view_characters_telugu" translatable="false">కఖ</string>
+    <string name="key__view_characters_telugu" translatable="false">हिन्दी</string>
     <string name="key__view_numeric" translatable="false">1 2\n3 4</string>
     <string name="key__view_phone" translatable="false">123</string>
     <string name="key__view_phone2" translatable="false">* #</string>
