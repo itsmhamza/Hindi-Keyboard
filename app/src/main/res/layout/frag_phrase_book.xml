@@ -37,7 +37,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/phrase"
-        android:layout_width="@dimen/_135sdp"
+        android:layout_width="@dimen/_125sdp"
         android:layout_margin="@dimen/_10sdp"
         android:layout_height="@dimen/_60sdp"
         app:cardCornerRadius="@dimen/_5sdp"
@@ -67,7 +67,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/tenses"
-        android:layout_width="@dimen/_135sdp"
+        android:layout_width="@dimen/_125sdp"
         android:layout_margin="@dimen/_10sdp"
         android:layout_height="@dimen/_60sdp"
         android:layout_marginTop="@dimen/_10sdp"
@@ -98,7 +98,7 @@
         android:id="@+id/grammer"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_margin="@dimen/_10sdp"
-        android:layout_width="@dimen/_135sdp"
+        android:layout_width="@dimen/_125sdp"
         android:layout_height="@dimen/_60sdp"
         app:cardCornerRadius="@dimen/_5sdp"
         app:cardElevation="@dimen/_5sdp"
@@ -126,7 +126,7 @@
 
     <androidx.cardview.widget.CardView
         android:id="@+id/word_meaning"
-        android:layout_width="@dimen/_135sdp"
+        android:layout_width="@dimen/_125sdp"
         android:layout_margin="@dimen/_10sdp"
         android:layout_marginTop="@dimen/_10sdp"
         android:layout_height="@dimen/_60sdp"

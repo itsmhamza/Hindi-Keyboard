@@ -7,6 +7,7 @@ import android.graphics.*
 import android.os.Bundle
 import android.text.Html
 import android.text.Layout
+import android.view.View
 import android.view.Window
 import android.widget.EditText
 import android.widget.RelativeLayout
@@ -26,7 +27,6 @@ import com.xiaopo.flying.sticker.Sticker
 import com.xiaopo.flying.sticker.TextSticker
 import top.defaults.colorpicker.ColorPickerPopup
 import top.defaults.colorpicker.ColorPickerPopup.ColorPickerObserver
-import java.text.SimpleDateFormat
 import java.util.*
 
 
@@ -38,7 +38,6 @@ class ImageEditorActivity : AppCompatActivity() {
 
     companion object {
         var Editimage: Bitmap? = null
-        var Date: String? = null
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -137,11 +136,10 @@ class ImageEditorActivity : AppCompatActivity() {
             dialog.show()
         }
         binding.save.setOnClickListener {
+            binding.stickerview.setLocked(!binding.stickerview.isLocked())
             binding.stickerview.setDrawingCacheEnabled(true)
             val bitmap: Bitmap = Bitmap.createBitmap(binding.stickerview.getDrawingCache())
             saveImgToCache(bitmap,"${System.currentTimeMillis()}")
-            val sdf = SimpleDateFormat("M/dd/yyyy")
-            Date = sdf.format(Date())
             Toast.makeText(this, "Your Image is saved", Toast.LENGTH_SHORT).show()
             finish()
         }

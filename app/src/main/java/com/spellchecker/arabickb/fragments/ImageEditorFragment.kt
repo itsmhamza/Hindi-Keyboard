@@ -9,18 +9,17 @@ import android.provider.MediaStore
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
-import com.karumi.dexter.BuildConfig
+import com.github.dhaval2404.imagepicker.ImagePicker
 import com.karumi.dexter.Dexter
 import com.karumi.dexter.MultiplePermissionsReport
 import com.karumi.dexter.PermissionToken
 import com.karumi.dexter.listener.multi.MultiplePermissionsListener
-
 import com.spellchecker.arabickb.databinding.FragImageEditorBinding
 import com.spellchecker.arabickb.ui.ImageEditorActivity
 import com.spellchecker.arabickb.ui.MyWorkActivity
 import java.io.IOException
+import java.util.*
 
 
 class ImageEditorFragment:Fragment() {
@@ -53,12 +52,7 @@ class ImageEditorFragment:Fragment() {
                 startActivityForResult(photoPickerIntent, GALLERY_REQUEST)
         }
         fragimagebinding.camera.setOnClickListener {
-            try {
-                val cameraIntent = Intent(MediaStore.ACTION_IMAGE_CAPTURE)
-                startActivityForResult(cameraIntent, CAMERA_REQUEST)
-            }catch (e:Exception){
-                Toast.makeText(activity, "Grant Permission first", Toast.LENGTH_SHORT).show()
-            }
+           pickCameraImageedit()
         }
         fragimagebinding.myWork.setOnClickListener {
             val intent = Intent(activity,MyWorkActivity::class.java)
@@ -91,19 +85,22 @@ class ImageEditorFragment:Fragment() {
         super.onActivityResult(requestCode, resultCode, data)
         when (requestCode) {
             CAMERA_REQUEST -> {
-                if(data!=null){
-                val intent = Intent(activity, ImageEditorActivity::class.java)
-                val bitmap = data!!.getExtras()!!.get("data") as Bitmap
-                ImageEditorActivity.Editimage = bitmap
-                startActivity(intent)
+                if (data != null) {
+                        val intent = Intent(activity, ImageEditorActivity::class.java)
+                        try {
+                            val uri = data?.data
+                            val bitmap = MediaStore.Images.Media.getBitmap(activity?.getContentResolver(), uri)
+                            ImageEditorActivity.Editimage = bitmap
+                            startActivity(intent)
+                        } catch (e: IOException) {
+                            e.printStackTrace()
+                        }
                 }
             }
-        }
-        when (requestCode) {
             GALLERY_REQUEST -> {
-                if (data!=null) {
+                if (data != null) {
                     val intent = Intent(activity, ImageEditorActivity::class.java)
-                    val selectedImage = data!!.data!!
+                    val selectedImage = data.data!!
                     try {
                         val bitmap =
                             MediaStore.Images.Media.getBitmap(
@@ -122,8 +119,7 @@ class ImageEditorFragment:Fragment() {
     private fun getPermission() {
         Dexter.withContext(activity)
             .withPermissions(
-                Manifest.permission.CAMERA,
-                Manifest.permission.READ_EXTERNAL_STORAGE
+                Manifest.permission.CAMERA
             ).withListener(object : MultiplePermissionsListener {
                 override fun onPermissionsChecked(report: MultiplePermissionsReport) {
                     report.let {
@@ -145,5 +141,11 @@ class ImageEditorFragment:Fragment() {
 
             }.check()
 
+    }
+    @Suppress("UNUSED_PARAMETER")
+    private fun pickCameraImageedit() {
+        ImagePicker.with(this)
+            .cameraOnly()
+            .start(CAMERA_REQUEST)
     }
     }
