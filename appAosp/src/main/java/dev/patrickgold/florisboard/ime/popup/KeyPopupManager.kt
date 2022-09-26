@@ -41,6 +41,7 @@ import dev.patrickgold.florisboard.ime.text.keyboard.KeyboardView
  *
  * @property keyboardView Reference to the keyboard view to which this manager class belongs to.
  */
+
 class KeyPopupManager<T_KBD: View, T_KV: View>(private val keyboardView: T_KBD) {
     private var anchorLeft: Boolean = false
     private var anchorRight: Boolean = false

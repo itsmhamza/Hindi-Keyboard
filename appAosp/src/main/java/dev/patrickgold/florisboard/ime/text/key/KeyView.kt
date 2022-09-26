@@ -828,10 +828,7 @@ class KeyView(
                 KeyCode.SWITCH_TO_TEXT_CONTEXT,
                 KeyCode.VIEW_CHARACTERS -> {
                     label =
-                        if (Subtype.DEFAULT == getamilSubtype() || Subtype.DEFAULT == getamilSubtype(
-                                true
-                            )
-                        )
+                        if (Subtype.DEFAULT == getamilSubtype() || Subtype.DEFAULT == getamilSubtype(true))
                             resources.getString(R.string.key__view_characters_telugu)
                         else
                             resources.getString(R.string.key__view_characters)

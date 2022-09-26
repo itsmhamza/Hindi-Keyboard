@@ -1,0 +1,56 @@
+{
+  "type": "characters",
+  "name": "hindi_two",
+  "label": "Hindi_Two",
+  "authors": [ "HeiWiper" ],
+  "direction": "ltr",
+  "modifier": "arabic",
+  "arrangement": [
+    [
+      { "$": "auto_text_key", "code":  2344, "label": "न" },
+      { "$": "auto_text_key", "code":  2345, "label": "ऩ" },
+      { "$": "auto_text_key", "code":  2346, "label": "प" },
+      { "$": "auto_text_key", "code":  2347, "label": "फ" },
+      { "$": "auto_text_key", "code":  2348, "label": "ब" },
+      { "$": "auto_text_key", "code":  2349, "label": "भ" },
+      { "$": "auto_text_key", "code":  2350, "label": "म" },
+      { "$": "auto_text_key", "code":  2351, "label": "य" },
+      { "$": "auto_text_key", "code":  2352, "label": "र" },
+      { "$": "auto_text_key", "code":  2353, "label": "ऱ" }
+    ],
+    [
+      { "$": "auto_text_key", "code":  2354, "label": "ल" },
+      { "$": "auto_text_key", "code":  2355, "label": "ळ" },
+      { "$": "auto_text_key", "code":  2356, "label": "ऴ" },
+      { "$": "auto_text_key", "code":  2357, "label": "व" },
+      { "$": "auto_text_key", "code":  2358, "label": "श" },
+      { "$": "auto_text_key", "code":  2359, "label": "ष" },
+      { "$": "auto_text_key", "code":  2360, "label": "स" },
+      { "$": "auto_text_key", "code":  2361, "label": "ह" },
+      { "$": "auto_text_key", "code":  2392, "label": "क़" },
+      { "$": "auto_text_key", "code":  2393, "label": "ख़" }
+    ],
+    [
+      { "$": "auto_text_key", "code":  2394, "label": "ग़" },
+      { "$": "auto_text_key", "code":  2395, "label": "ज़" },
+      { "$": "auto_text_key", "code":  2396, "label": "ड़" },
+      { "$": "auto_text_key", "code":  2397, "label": "ढ़" },
+      { "$": "auto_text_key", "code":  2398, "label": "फ़" },
+      { "$": "auto_text_key", "code":  2399, "label": "य़" },
+      { "$": "auto_text_key", "code":  2305, "label": "कँ" },
+      { "$": "auto_text_key", "code":  2306, "label": "कं" },
+      { "$": "auto_text_key", "code":  2307, "label": "कः" },
+      { "$": "auto_text_key", "code":  2364, "label": "क़" }
+    ],
+    [
+      { "$": "auto_text_key", "code":  -13, "label": "" },
+      { "$": "auto_text_key", "code":  2365, "label": "कऽ" },
+      { "$": "auto_text_key", "code":  2366, "label": "का" },
+      { "$": "auto_text_key", "code":  2367, "label": "कि" },
+      { "$": "auto_text_key", "code":  2368, "label": "की" },
+      { "$": "auto_text_key", "code":  2369, "label": "कु" },
+      { "$": "auto_text_key", "code":  2370, "label": "कू" },
+      { "$": "auto_text_key", "code":  2371, "label": "कृ" }
+    ]
+  ]
+}

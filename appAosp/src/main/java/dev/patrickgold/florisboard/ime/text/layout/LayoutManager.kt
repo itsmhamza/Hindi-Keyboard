@@ -259,8 +259,8 @@ class LayoutManager(private val context: Context) : CoroutineScope by MainScope(
                 }
                 main = LTN(LayoutType.CHARACTERS, subtype.layout)
                 modifier = LTN(LayoutType.CHARACTERS_MOD, "default")
-             //   modifier = LTN(LayoutType.CHARACTERS_MOD, "defaulttelugu")
             }
+
             KeyboardMode.EDITING -> {
                 // Layout for this mode is defined in custom layout xml file.
             }
@@ -269,7 +269,6 @@ class LayoutManager(private val context: Context) : CoroutineScope by MainScope(
 //                if(Subtype.DEFAULT == Subtype(-1, Locale.ENGLISH, "telugu")||Subtype.DEFAULT ==Subtype(-1, Locale.ENGLISH, "telugushift")){
 //                    main = LTN(LayoutType.NUMERIC, "defaulttelugu")
 //              }
-
             }
             KeyboardMode.NUMERIC_ADVANCED -> {
                 main = LTN(LayoutType.NUMERIC_ADVANCED, "default")

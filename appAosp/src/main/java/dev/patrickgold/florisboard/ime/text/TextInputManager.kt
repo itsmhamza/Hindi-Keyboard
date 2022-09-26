@@ -442,7 +442,7 @@ class TextInputManager private constructor(val context: Context) : CoroutineScop
 
 
             R.id.quick_action_switch_keyboard ->
-                changelanguage()
+                changelanguage("dual")
             //    florisboard.launchSettings()
 
             //   R.id.quick_action_one_handed_toggle -> florisboard.toggleOneHandedMode()
@@ -897,6 +897,18 @@ class TextInputManager private constructor(val context: Context) : CoroutineScop
 
                 }
             }
+
+            KeyCode.HINDI_SHIFT -> {
+
+                changelanguage("hindi_two")
+            }
+
+
+            KeyCode.HINDI_SHIFT2 -> {
+
+                changelanguage("hindi")
+            }
+
             KeyCode.ENTER -> {
                 handleEnter()
                 smartbarView?.resetClipboardSuggestion()
@@ -1094,17 +1106,34 @@ class TextInputManager private constructor(val context: Context) : CoroutineScop
     }
 
     //This Method is use to Switch language     ---->Truckers
-    fun changelanguage() {
+    fun changelanguage(test: String) {
 
-        if (Subtype.DEFAULT == Subtype(-1, Locale.ENGLISH, "qwerty")) {
+      if (test == "hindi"){
             changeCaps(false)
             changeDefaultKeyboardJson(-1, Locale.ENGLISH, "hindi")
-        } else {
-            changeDefaultKeyboardJson(-1, Locale.ENGLISH, "qwerty")
         }
 
-        if (activeKeyboardMode != KeyboardMode.CHARACTERS)
-            setActiveKeyboardMode(KeyboardMode.CHARACTERS)
+        else if (test == "hindi_two"){
+            changeCaps(false)
+            changeDefaultKeyboardJson(-1, Locale.ENGLISH, "hindi_two")
+        }
+
+        else{
+          if (Subtype.DEFAULT == Subtype(-1, Locale.ENGLISH, "qwerty")) {
+              changeCaps(false)
+              changeDefaultKeyboardJson(-1, Locale.ENGLISH, "hindi")
+          }
+          else {
+              changeDefaultKeyboardJson(-1, Locale.ENGLISH, "qwerty")
+          }
+
+          if (activeKeyboardMode != KeyboardMode.CHARACTERS)
+              setActiveKeyboardMode(KeyboardMode.CHARACTERS)
+        }
+
+
+
+
     }
     // This Method is use to Shift Key Press Get more Default language Keys or Undo
 
@@ -1164,7 +1193,7 @@ class TextInputManager private constructor(val context: Context) : CoroutineScop
         changeDefaultKeyboardJson(
             -1,
             Locale.ENGLISH,
-            "tamil"
+            "qwerty"
         )  // setting the default for handling keyboard size large issue
         if (mode == 0) {
             setActiveKeyboardMode(KeyboardMode.SYMBOLS)
