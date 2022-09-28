@@ -29,6 +29,8 @@ import android.widget.LinearLayout
 import android.widget.Toast
 import android.widget.ViewFlipper
 import androidx.constraintlayout.widget.ConstraintLayout
+import androidx.lifecycle.Lifecycle
+import androidx.lifecycle.ProcessLifecycleOwner
 import androidx.viewbinding.BuildConfig
 import dev.patrickgold.florisboard.R
 import dev.patrickgold.florisboard.ime.core.*
@@ -457,77 +459,170 @@ class TextInputManager private constructor(val context: Context) : CoroutineScop
             }
 
             R.id.quick_action_settings -> {
-                try {
-                    val intent = Intent(
-                        context,
-                        Class.forName("com.example.speaktranslate.TamilKeyboardActivity")
-                    ).apply {
-                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                if (ProcessLifecycleOwner.get().getLifecycle().getCurrentState()
+                        .isAtLeast(Lifecycle.State.STARTED)) {
+                    try {
+                        val intent = Intent(
+                            florisboard,
+                            Class.forName("com.spellchecker.arabickb.ui.MainActivity")
+                        ).apply {
+                            flags =
+                                Intent.FLAG_ACTIVITY_NEW_TASK /*or Intent.FLAG_ACTIVITY_CLEAR_TASK*/
+                        }
+                        florisboard.startActivity(intent)
+                    } catch (e: ClassNotFoundException) {
+                        e.printStackTrace()
                     }
-                    context.startActivity(intent)
-                } catch (e: ClassNotFoundException) {
-                    e.printStackTrace()
                 }
+                else {
+                    try {
+                        val intent = Intent(
+                            florisboard,
+                            Class.forName("com.spellchecker.arabickb.ui.SplashActivity")
+                        ).apply {
+                            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        }
+                        florisboard.startActivity(intent)
+                    } catch (e: ClassNotFoundException) {
+                        e.printStackTrace()
+                    }
+//                    SaveSharedPreferenceSettings()
+                }
+                return
             }
+
             R.id.quick_action_theme -> {
-                try {
-                    val intent = Intent(
-                        context,
-                        Class.forName("com.example.speaktranslate.ThemesActivity")
-                    ).apply {
-                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                if (ProcessLifecycleOwner.get().getLifecycle().getCurrentState()
+                        .isAtLeast(Lifecycle.State.STARTED)) {
+                    try {
+                        val intent = Intent(
+                            florisboard,
+                            Class.forName("com.spellchecker.arabickb.ui.MainActivity")
+                        ).apply {
+                            flags =
+                                Intent.FLAG_ACTIVITY_NEW_TASK /*or Intent.FLAG_ACTIVITY_CLEAR_TASK*/
+                        }
+                        florisboard.startActivity(intent)
+                    } catch (e: ClassNotFoundException) {
+                        e.printStackTrace()
                     }
-                    context.startActivity(intent)
-                } catch (e: ClassNotFoundException) {
-                    e.printStackTrace()
                 }
+                else {
+                    try {
+                        val intent = Intent(
+                            florisboard,
+                            Class.forName("com.spellchecker.arabickb.ui.SplashActivity")
+                        ).apply {
+                            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        }
+                        florisboard.startActivity(intent)
+                    } catch (e: ClassNotFoundException) {
+                        e.printStackTrace()
+                    }
+//                    SaveSharedPreferenceSettings()
+                }
+                return
             }
+
             R.id.quick_action_voice_typing -> {
-                try {
-                    val intent = Intent(
-                        context,
-                        Class.forName("com.example.speaktranslate.VoiceTyping")
-                    ).apply {
-                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                if (ProcessLifecycleOwner.get().getLifecycle().getCurrentState()
+                        .isAtLeast(Lifecycle.State.STARTED)) {
+                    try {
+                        val intent = Intent(
+                            florisboard,
+                            Class.forName("com.spellchecker.arabickb.ui.MainActivity")
+                        ).apply {
+                            flags =
+                                Intent.FLAG_ACTIVITY_NEW_TASK /*or Intent.FLAG_ACTIVITY_CLEAR_TASK*/
+                        }
+                        florisboard.startActivity(intent)
+                    } catch (e: ClassNotFoundException) {
+                        e.printStackTrace()
                     }
-                    context.startActivity(intent)
-                } catch (e: ClassNotFoundException) {
-                    e.printStackTrace()
                 }
+                else {
+                    try {
+                        val intent = Intent(
+                            florisboard,
+                            Class.forName("com.spellchecker.arabickb.ui.SplashActivity")
+                        ).apply {
+                            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        }
+                        florisboard.startActivity(intent)
+                    } catch (e: ClassNotFoundException) {
+                        e.printStackTrace()
+                    }
+//                    SaveSharedPreferenceSettings()
+                }
+                return
             }
+
             R.id.quick_action_voice_translator -> {
-                try {
-                    val intent = Intent(
-                        context,
-                        Class.forName("com.example.speaktranslate.TranslationActivity")
-                    ).apply {
-                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                if (ProcessLifecycleOwner.get().getLifecycle().getCurrentState()
+                        .isAtLeast(Lifecycle.State.STARTED)) {
+                    try {
+                        val intent = Intent(
+                            florisboard,
+                            Class.forName("com.spellchecker.arabickb.ui.MainActivity")
+                        ).apply {
+                            flags =
+                                Intent.FLAG_ACTIVITY_NEW_TASK /*or Intent.FLAG_ACTIVITY_CLEAR_TASK*/
+                        }
+                        florisboard.startActivity(intent)
+                    } catch (e: ClassNotFoundException) {
+                        e.printStackTrace()
                     }
-                    context.startActivity(intent)
-                } catch (e: ClassNotFoundException) {
-                    e.printStackTrace()
                 }
+                else {
+                    try {
+                        val intent = Intent(
+                            florisboard,
+                            Class.forName("com.spellchecker.arabickb.ui.SplashActivity")
+                        ).apply {
+                            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        }
+                        florisboard.startActivity(intent)
+                    } catch (e: ClassNotFoundException) {
+                        e.printStackTrace()
+                    }
+//                    SaveSharedPreferenceSettings()
+                }
+                return
             }
+
             R.id.quick_action_voice -> {
-                try {
-                    val intent = Intent(
-                        context,
-                        Class.forName("com.example.speaktranslate.MainActivity")
-                    ).apply {
-                        flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+
+                if (ProcessLifecycleOwner.get().getLifecycle().getCurrentState()
+                        .isAtLeast(Lifecycle.State.STARTED)) {
+                    try {
+                        val intent = Intent(
+                            florisboard,
+                            Class.forName("com.spellchecker.arabickb.ui.MainActivity")
+                        ).apply {
+                            flags =
+                                Intent.FLAG_ACTIVITY_NEW_TASK /*or Intent.FLAG_ACTIVITY_CLEAR_TASK*/
+                        }
+                        florisboard.startActivity(intent)
+                    } catch (e: ClassNotFoundException) {
+                        e.printStackTrace()
                     }
-                    context.startActivity(intent)
-                } catch (e: ClassNotFoundException) {
-                    e.printStackTrace()
                 }
+                else {
+                    try {
+                        val intent = Intent(
+                            florisboard,
+                            Class.forName("com.spellchecker.arabickb.ui.SplashActivity")
+                        ).apply {
+                            flags = Intent.FLAG_ACTIVITY_NEW_TASK or Intent.FLAG_ACTIVITY_CLEAR_TASK
+                        }
+                        florisboard.startActivity(intent)
+                    } catch (e: ClassNotFoundException) {
+                        e.printStackTrace()
+                    }
+//                    SaveSharedPreferenceSettings()
+                }
+                return
             }
-//            R.id.quick_action_translation_lang -> {
-//                val layout = florisboard.inputView?.langSelectorLayout
-//                if (layout?.visibility == View.VISIBLE)
-//                    layout.visibility = View.GONE
-//                else
-//                    layout?.visibility = View.VISIBLE
-//            }
         }
         smartbarView?.isQuickActionsVisible = true
         smartbarView?.updateSmartbarState()
@@ -1201,7 +1296,6 @@ class TextInputManager private constructor(val context: Context) : CoroutineScop
             setActiveKeyboardMode(KeyboardMode.SYMBOLS2)
         }
     }
-
 
     override fun onViewClick(focusChanged: Boolean) {
         textTranslationSwitchOff()
