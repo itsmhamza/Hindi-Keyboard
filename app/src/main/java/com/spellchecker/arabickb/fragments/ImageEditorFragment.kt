@@ -47,11 +47,13 @@ class ImageEditorFragment:Fragment() {
         super.onViewCreated(view, savedInstanceState)
         getPermission()
         fragimagebinding.gallery.setOnClickListener {
+            ImageEditorActivity.image = false
                 val photoPickerIntent = Intent(Intent.ACTION_PICK)
                 photoPickerIntent.type = "image/*"
                 startActivityForResult(photoPickerIntent, GALLERY_REQUEST)
         }
         fragimagebinding.camera.setOnClickListener {
+            ImageEditorActivity.image = false
            pickCameraImageedit()
         }
         fragimagebinding.myWork.setOnClickListener {

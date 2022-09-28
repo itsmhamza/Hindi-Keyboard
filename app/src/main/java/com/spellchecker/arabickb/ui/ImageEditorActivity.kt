@@ -7,7 +7,6 @@ import android.graphics.*
 import android.os.Bundle
 import android.text.Html
 import android.text.Layout
-import android.view.View
 import android.view.Window
 import android.widget.EditText
 import android.widget.RelativeLayout
@@ -23,10 +22,12 @@ import com.spellchecker.arabickb.adapters.emojiAdopter
 import com.spellchecker.arabickb.databinding.ActivityImageEditorBinding
 import com.spellchecker.arabickb.utils.Cache.saveImgToCache
 import com.spellchecker.arabickb.utils.EMOJIS.emojis
+import com.spellchecker.arabickb.utils.mywork
 import com.xiaopo.flying.sticker.Sticker
 import com.xiaopo.flying.sticker.TextSticker
 import top.defaults.colorpicker.ColorPickerPopup
 import top.defaults.colorpicker.ColorPickerPopup.ColorPickerObserver
+import java.io.File
 import java.util.*
 
 
@@ -38,6 +39,7 @@ class ImageEditorActivity : AppCompatActivity() {
 
     companion object {
         var Editimage: Bitmap? = null
+        var image:Boolean=false
     }
 
     @SuppressLint("ClickableViewAccessibility")
@@ -52,6 +54,7 @@ class ImageEditorActivity : AppCompatActivity() {
         binding.editimage.setImageBitmap(Editimage)
 
         binding.back.setOnClickListener {
+            image=false
             finish()
         }
 
@@ -140,8 +143,21 @@ class ImageEditorActivity : AppCompatActivity() {
             binding.stickerview.setDrawingCacheEnabled(true)
             val bitmap: Bitmap = Bitmap.createBitmap(binding.stickerview.getDrawingCache())
             saveImgToCache(bitmap,"${System.currentTimeMillis()}")
+            if(image==true){
+                val extras = intent.extras
+                val value = extras!!.getInt("pos")
+                val dir = File(cacheDir, "images")
+                val child = dir.list()
+                val file = File(dir,"${child[value]}")
+                file.delete()
+            }
             Toast.makeText(this, "Your Image is saved", Toast.LENGTH_SHORT).show()
             finish()
         }
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
+        image=false
     }
 }

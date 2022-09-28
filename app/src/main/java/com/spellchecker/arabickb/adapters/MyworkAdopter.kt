@@ -72,11 +72,10 @@ class MyworkAdopter(private val context: Context, val imagesList: ArrayList<mywo
         }
         holder.edit.setOnClickListener {
             val intent = Intent(context,ImageEditorActivity::class.java)
+            intent.putExtra("pos",position)
             val myBitmap = BitmapFactory.decodeFile(file.getAbsolutePath())
             ImageEditorActivity.Editimage = myBitmap
-            file.delete()
-            imagesList.removeAt(position)
-            notifyDataSetChanged()
+            ImageEditorActivity.image = true
             startActivity(context,intent,null)
             (context as Activity).finish()
         }
