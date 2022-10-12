@@ -8,21 +8,27 @@ import android.content.Context
 import android.content.Intent
 import android.os.Bundle
 import android.speech.RecognizerIntent
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import com.koushikdutta.async.future.FutureCallback
 import com.koushikdutta.ion.Ion
 import com.spellchecker.arabickb.R
 import com.spellchecker.arabickb.appinterfaces.onItemClickListener
+import com.spellchecker.arabickb.database.*
 import com.spellchecker.arabickb.databinding.FragVoiceTranslateBinding
 import com.spellchecker.arabickb.dialogs.LangSelectionDialog
 import com.spellchecker.arabickb.prefrences.SharedPrefres
 import com.spellchecker.arabickb.ui.TranslatedActivity
 import com.spellchecker.arabickb.utils.LangSelection
 import com.spellchecker.arabickb.utils.Languages
+import kotlinx.coroutines.Dispatchers
+import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.launch
 import org.json.JSONArray
 import org.json.JSONException
 
@@ -34,6 +40,7 @@ class VoiceTranslateFragment:Fragment(),View.OnClickListener,onItemClickListener
     private val REQUEST_CODE = 100
     var prefs:SharedPrefres?=null
     var callback: onItemClickListener?=null
+    lateinit var historyviewModel:HistoryModel
     companion object {
 
         fun newInstance() =
@@ -52,6 +59,9 @@ class VoiceTranslateFragment:Fragment(),View.OnClickListener,onItemClickListener
    fun uiViews(){
        callback=this
        // Inflate the layout for this fragment
+       val histrydao=Speaktranslatedb.getDatabase(requireActivity()).HistoryDao()
+       val historyRepoistry=HistoryRepoistry(histrydao)
+       historyviewModel=ViewModelProvider(this,HistoryFactory(historyRepoistry)).get(HistoryModel::class.java)
        prefs= SharedPrefres(requireContext())
        fragvoicebinding.inputlangview.setOnClickListener(this)
        fragvoicebinding.outputputlangview.setOnClickListener(this)
@@ -107,12 +117,15 @@ class VoiceTranslateFragment:Fragment(),View.OnClickListener,onItemClickListener
                         ).show()
                         return
                     }
-                    parseResult(result)
+                    GlobalScope.launch(Dispatchers.Main) {
+                        parseResult(result)
+                    }
                 }
             })
     }
 
     fun parseResult(inputJson: String?): String {
+
         val data: String?
         var data1: String? = null
         var data2 = ""
@@ -135,6 +148,14 @@ class VoiceTranslateFragment:Fragment(),View.OnClickListener,onItemClickListener
             progressDialog!!.dismiss()
         }
         data1?.let {
+            val historydata = HistoryRecords(0,
+                fragvoicebinding.texttranslate.text.toString(),
+                it,
+                LangSelection.Langnames[prefs!!.inputlangpos],
+                LangSelection.Langnames[prefs!!.outputlangpos],
+            )
+            historyviewModel.insertHistoryRecord(historydata)
+            Log.d("HISTORYDATA",historyviewModel.getAllHistryData().toString())
             //  binding.translated.text = it
             val intent = Intent(activity,TranslatedActivity::class.java)
             intent.putExtra("Translated",it)
