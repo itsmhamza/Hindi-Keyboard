@@ -8,6 +8,8 @@ import android.speech.tts.TextToSpeech
 import android.util.Log
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
+import androidx.lifecycle.ViewModelProvider
+import com.spellchecker.arabickb.database.*
 import com.spellchecker.arabickb.databinding.ActivityTranslatedBinding
 import com.spellchecker.arabickb.prefrences.SharedPrefres
 import com.spellchecker.arabickb.utils.LangSelection
@@ -16,6 +18,7 @@ import java.util.*
 
 class TranslatedActivity : AppCompatActivity() ,TextToSpeech.OnInitListener{
     private lateinit var binding:ActivityTranslatedBinding
+    lateinit var bookmarkviewModel:BookmarkModel
     private var tts: TextToSpeech?=null
     var translate:String?=null
     var translated:String?=null
@@ -24,6 +27,9 @@ class TranslatedActivity : AppCompatActivity() ,TextToSpeech.OnInitListener{
         super.onCreate(savedInstanceState)
         binding = ActivityTranslatedBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        val bookmarkdao= Speaktranslatedb.getDatabase(this).BookmarkDao()
+        val bookmarkRepoistry= BookmarkRepoistry(bookmarkdao)
+        bookmarkviewModel= ViewModelProvider(this, BookmarkFactory(bookmarkRepoistry)).get(BookmarkModel::class.java)
         prefs= SharedPrefres(this)
         tts = TextToSpeech(this,this)
 
@@ -57,6 +63,12 @@ class TranslatedActivity : AppCompatActivity() ,TextToSpeech.OnInitListener{
         }
         binding.translatedSpeak.setOnClickListener {
             speakouttranslated()
+        }
+        binding.bookmark.setOnClickListener{
+            val bookmarkdata = BookmarkRecords(0,translate,translated,
+                LangSelection.Langnames[prefs!!.inputlangpos],LangSelection.Langnames[prefs!!.outputlangpos])
+            bookmarkviewModel.insertbookmarkRecord(bookmarkdata)
+            Toast.makeText(this, "Added to Bookmark", Toast.LENGTH_SHORT).show()
         }
     }
     private fun speakouttranslate(){

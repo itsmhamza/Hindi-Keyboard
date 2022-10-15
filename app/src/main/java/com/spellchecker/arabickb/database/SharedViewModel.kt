@@ -19,7 +19,6 @@ class SharedViewModel (private val voicerepositry:SpeakRepositry): ViewModel() {
 
     }
 
-
     fun deleteVoiceTranslation(voicetrans:Speaktranslation){
         viewModelScope.launch(Dispatchers.IO) {
             voicerepositry.deleteData(voicetrans)

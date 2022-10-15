@@ -51,9 +51,13 @@
         <entry key="..\:/Users/user/AndroidStudioProjects/Hindi-Keyboard2/app/src/main/res/layout/activity_learndailyword.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Hindi-Keyboard2/app/src/main/res/layout/activity_my_work.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Hindi-Keyboard2/app/src/main/res/layout/activity_translated.xml" value="0.264" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Hindi-Keyboard2/app/src/main/res/layout/activity_voice_translate_bookmark.xml" value="0.2359375" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Hindi-Keyboard2/app/src/main/res/layout/activity_voice_translate_history.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Hindi-Keyboard2/app/src/main/res/layout/frag_dictionary.xml" value="0.24895833333333334" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Hindi-Keyboard2/app/src/main/res/layout/frag_phrase_book.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Hindi-Keyboard2/app/src/main/res/layout/frag_voice_translate.xml" value="0.25" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Hindi-Keyboard2/app/src/main/res/layout/mywork_item.xml" value="0.25" />
+        <entry key="..\:/Users/user/AndroidStudioProjects/Hindi-Keyboard2/app/src/main/res/layout/voicehistory_items.xml" value="0.264" />
         <entry key="..\:/Users/user/AndroidStudioProjects/Hindi-Keyboard2/app/src/main/res/xml/file_paths.xml" value="0.25" />
         <entry key="app/src/main/res/drawable/bg_input.xml" value="0.1515" />
         <entry key="app/src/main/res/drawable/bg_output.xml" value="0.2" />

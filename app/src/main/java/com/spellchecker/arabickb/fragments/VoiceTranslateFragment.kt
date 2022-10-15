@@ -24,6 +24,8 @@ import com.spellchecker.arabickb.databinding.FragVoiceTranslateBinding
 import com.spellchecker.arabickb.dialogs.LangSelectionDialog
 import com.spellchecker.arabickb.prefrences.SharedPrefres
 import com.spellchecker.arabickb.ui.TranslatedActivity
+import com.spellchecker.arabickb.ui.VoiceTranslateBookmarkActivity
+import com.spellchecker.arabickb.ui.VoiceTranslateHistoryActivity
 import com.spellchecker.arabickb.utils.LangSelection
 import com.spellchecker.arabickb.utils.Languages
 import kotlinx.coroutines.Dispatchers
@@ -41,6 +43,7 @@ class VoiceTranslateFragment:Fragment(),View.OnClickListener,onItemClickListener
     var prefs:SharedPrefres?=null
     var callback: onItemClickListener?=null
     lateinit var historyviewModel:HistoryModel
+
     companion object {
 
         fun newInstance() =
@@ -69,6 +72,8 @@ class VoiceTranslateFragment:Fragment(),View.OnClickListener,onItemClickListener
        fragvoicebinding.copy.setOnClickListener(this)
        fragvoicebinding.del.setOnClickListener(this)
        fragvoicebinding.translate.setOnClickListener(this)
+       fragvoicebinding.history.setOnClickListener(this)
+       fragvoicebinding.bookmark.setOnClickListener(this)
        fragvoicebinding.inputlanguage.text= LangSelection.Langnames[prefs!!.inputlangpos]
        fragvoicebinding.inputlanguageimage.setImageResource(LangSelection.Flagimg[prefs!!.inputlangpos])
        fragvoicebinding.outputlanguage.text= LangSelection.Langnames[prefs!!.outputlangpos]
@@ -238,6 +243,16 @@ class VoiceTranslateFragment:Fragment(),View.OnClickListener,onItemClickListener
             R.id.mic->
             {
                 speak_()
+            }
+            R.id.history->
+            {
+                val intent = Intent(activity,VoiceTranslateHistoryActivity::class.java)
+                startActivity(intent)
+            }
+            R.id.bookmark->
+            {
+                val intent = Intent(activity,VoiceTranslateBookmarkActivity::class.java)
+                startActivity(intent)
             }
         }
     }
